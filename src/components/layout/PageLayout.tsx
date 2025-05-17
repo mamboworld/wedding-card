@@ -58,16 +58,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({
           </div>
         </nav>
       )}
-
-      {/* 모바일 안내 배너 */}
-      <motion.div 
-        className="fixed top-0 left-0 right-0 bg-amber-600 text-white text-center text-sm py-1 z-50 md:hidden"
-        initial={{ y: -50 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 1, duration: 0.5 }}
-      >
-        화면을 세로로 돌려 모바일 화면에 최적화된 청첩장을 확인하세요
-      </motion.div>
     </div>
   );
 };
