@@ -48,7 +48,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
       </motion.main>
       
       {showNavigation && (
-        <nav className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-lg border-t border-gray-200 z-50">
+        <nav className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm shadow-lg border-t border-amber-200 z-50">
           <div className="max-w-md mx-auto flex justify-around items-center">
             <NavLink to="/" label="인트로" icon="✨" active={location.pathname === '/'} />
             <NavLink to="/main" label="정보" icon="📅" active={location.pathname === '/main'} />
@@ -61,7 +61,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
 
       {/* 모바일 안내 배너 */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 bg-hogwarts-gold text-white text-center text-sm py-1 z-50 md:hidden"
+        className="fixed top-0 left-0 right-0 bg-amber-600 text-white text-center text-sm py-1 z-50 md:hidden"
         initial={{ y: -50 }}
         animate={{ y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
@@ -85,14 +85,14 @@ const NavLink: React.FC<NavLinkProps> = ({ to, label, icon, active }) => {
     <Link
       to={to}
       className={`flex flex-col items-center py-3 px-2 relative ${
-        active ? 'text-hogwarts-red font-semibold' : 'text-gray-600'
+        active ? 'text-amber-700 font-semibold' : 'text-gray-600'
       }`}
     >
       <span className="text-xl mb-1">{icon}</span>
       <span className="text-xs font-korean">{label}</span>
       {active && (
         <motion.div
-          className="absolute bottom-0 left-0 right-0 h-0.5 bg-hogwarts-red"
+          className="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-600"
           layoutId="navIndicator"
         />
       )}

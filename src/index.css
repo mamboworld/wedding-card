@@ -12,8 +12,8 @@
     @apply scroll-smooth;
   }
   body {
-    @apply font-korean text-gray-800 bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen;
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+    @apply font-korean text-gray-800 bg-gradient-to-br from-amber-50 to-amber-100 min-h-screen;
+    background-image: radial-gradient(circle, rgba(245, 158, 11, 0.1) 1px, transparent 1px);
     background-size: 50px 50px;
   }
   
@@ -24,7 +24,7 @@
 
 @layer components {
   .magic-btn {
-    @apply px-6 py-3 rounded-lg bg-hogwarts-gold text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+    @apply px-6 py-3 rounded-lg bg-amber-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
   }
   
   .card {
@@ -32,11 +32,11 @@
   }
 
   .magic-title {
-    @apply font-magic text-4xl md:text-5xl lg:text-6xl text-hogwarts-red;
+    @apply font-korean-title text-4xl md:text-5xl lg:text-6xl text-amber-700;
   }
 
   .korean-title {
-    @apply font-korean-title text-2xl md:text-3xl lg:text-4xl text-hogwarts-red;
+    @apply font-korean-title text-2xl md:text-3xl lg:text-4xl text-amber-800;
   }
 
   .particle {

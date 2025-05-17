@@ -72,7 +72,7 @@ function MagicBackground() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0">
       {particles}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900 to-indigo-900 opacity-20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-amber-50 to-amber-100 opacity-60" />
     </div>
   );
 }
