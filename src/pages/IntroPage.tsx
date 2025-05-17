@@ -5,6 +5,9 @@ import { useWedding } from '../contexts/WeddingContext';
 import PageLayout from '../components/layout/PageLayout';
 import backgroundImage from '../assets/images/background_intro_wedding.png';
 
+// 네이버 지도 링크
+const NAVER_MAP_URL = "https://naver.me/F9N45Mo5";
+
 const IntroPage: React.FC = () => {
   const { weddingInfo, getDaysRemaining } = useWedding();
   const daysRemaining = getDaysRemaining();
@@ -12,15 +15,34 @@ const IntroPage: React.FC = () => {
   useEffect(() => {
     // 페이지 로드 시 상단으로 스크롤
     window.scrollTo(0, 0);
+
+    // 스크롤 이벤트 리스너 추가
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // 문서 끝에 도달했는지 확인
+      if (scrollPosition + windowHeight >= documentHeight) {
+        // 스크롤 위치를 마지막 섹션으로 제한
+        window.scrollTo(0, documentHeight - windowHeight);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <PageLayout showNavigation={false}>
       {/* 스냅 스크롤을 위한 컨테이너 */}
-      <div className="flex flex-col items-center snap-y snap-mandatory h-screen overflow-y-scroll">
+      <div 
+        className="flex flex-col items-center snap-y snap-mandatory h-screen overflow-y-scroll overscroll-none snap-container hide-scrollbar"
+        style={{ scrollSnapType: 'y mandatory', backgroundColor: 'transparent' }}
+      >
         {/* 첫 번째 섹션: 고정 배경 이미지와 기본 정보 */}
         <div 
-          className="min-h-screen w-full flex flex-col justify-center items-center relative pt-4 snap-start snap-always"
+          className="min-h-screen w-full flex flex-col justify-center items-center relative pt-4 snap-start snap-always snap-section"
           style={{
             background: `url(${backgroundImage}) no-repeat center center`,
             backgroundSize: 'cover',
@@ -82,7 +104,7 @@ const IntroPage: React.FC = () => {
         {/* 두 번째 섹션: INVITE 문구 */}
         <div 
           id="invite"
-          className="min-h-screen w-full flex flex-col justify-center items-center relative snap-start snap-always"
+          className="min-h-screen w-full flex flex-col justify-center items-center relative snap-start snap-always snap-section"
           style={{
             background: `url(${backgroundImage}) no-repeat center center`,
             backgroundSize: 'cover',
@@ -127,7 +149,7 @@ const IntroPage: React.FC = () => {
         {/* 세 번째 섹션: 날짜와 장소 정보 */}
         <div 
           id="details"
-          className="min-h-screen w-full flex flex-col justify-center items-center relative snap-start snap-always"
+          className="min-h-screen w-full flex flex-col justify-center items-center relative snap-start snap-always snap-section"
           style={{
             background: `url(${backgroundImage}) no-repeat center center`,
             backgroundSize: 'cover',
@@ -143,16 +165,24 @@ const IntroPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-2xl font-korean-title text-amber-900 mb-6 whitespace-nowrap">
+            <div className="text-2xl font-korean-title text-amber-900 mb-1 whitespace-nowrap">
               2025년 6월 28일 토요일
             </div>
-            <div className="text-xl text-amber-800 font-korean-title mb-6">
+            <div className="text-xl text-amber-800 font-korean-title mb-8">
               오후 4시 10분
             </div>
             
-            <div className="text-xl text-amber-700 font-korean font-semibold mb-2 whitespace-nowrap">
+            <a 
+              href={NAVER_MAP_URL} 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-xl text-amber-700 font-korean font-semibold mb-2 whitespace-nowrap hover:text-amber-500 transition-colors"
+            >
               그레이스 파티
-            </div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+            </a>
             <div className="text-sm text-amber-700 font-korean mb-1">
               서울특별시 관악구 신림동 1485-1번지
             </div>
@@ -178,6 +208,9 @@ const IntroPage: React.FC = () => {
             </Link>
           </motion.div>
         </div>
+        
+        {/* 스크롤 제한을 위한 숨겨진 요소 - 추가 스크롤 방지 */}
+        <div className="h-0 w-full snap-start snap-always snap-section overflow-hidden"></div>
       </div>
     </PageLayout>
   );
