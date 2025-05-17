@@ -1,46 +1,55 @@
-# Getting Started with Create React App
+# 해리포터 테마 웨딩 카드 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+해리포터 감성의 애니메이션이 있는 모바일 최적화 청첩장 웹앱입니다.
 
-## Available Scripts
+## 기능 소개
 
-In the project directory, you can run:
+- **인트로 페이지**: 마법같은 애니메이션과 함께 웨딩 정보 소개
+- **메인 정보 페이지**: 결혼식 일시, 장소, 오시는 길, 연락처, 계좌번호
+- **갤러리 페이지**: 커플 사진 슬라이드쇼
+- **RSVP 페이지**: 참석 여부 확인 및 축하 메시지 전송 폼
+- **위시리스트 페이지**: 선물 위시리스트 관리
 
-### `npm start`
+## 기술 스택
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React + TypeScript
+- Tailwind CSS (스타일링)
+- Framer Motion (애니메이션)
+- React Router (라우팅)
+- React Hook Form (폼 처리)
+- React Image Gallery (이미지 갤러리)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 실행 방법
 
-### `npm test`
+```bash
+# 의존성 설치
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 개발 서버 실행
+npm start
 
-### `npm run build`
+# 빌드
+npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 배포
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Build 후에 생성되는 `build` 폴더를 웹 서버에 업로드하거나, GitHub Pages, Netlify, Vercel 등을 통해 손쉽게 배포할 수 있습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 사용자 정의
 
-### `npm run eject`
+- `src/contexts/WeddingContext.tsx` 파일에서 결혼 정보 업데이트
+- `src/pages/GalleryPage.tsx` 파일에서 갤러리 이미지 업데이트
+- `src/pages/WishlistPage.tsx` 파일에서 위시리스트 아이템 업데이트
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 특징
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 반응형 디자인 (모바일 최적화)
+- 해리포터 테마의 UI/UX
+- 마법 효과 애니메이션
+- 계좌번호 복사 및 전화 연결 기능
+- 참석자 관리 기능
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+해리포터 테마의 청첩장으로 특별한 날을 더욱 마법같이 만들어보세요! ✨🪄

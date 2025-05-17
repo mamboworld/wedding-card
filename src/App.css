@@ -36,3 +36,127 @@
     transform: rotate(360deg);
   }
 }
+
+/* 해리포터 테마 청첩장 스타일 */
+
+/* 커서 마법봉 - 더 러블리한 느낌으로 변경 */
+.wand-cursor {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%23F5D0FE" stroke="%23D3A625" stroke-width="1.5"><path d="M12,2L12,5M12,19L12,22M5,12L2,12M22,12L19,12M7,7L5,5M19,19L17,17M17,7L19,5M5,19L7,17M16,12C16,14.2091 14.2091,16 12,16C9.79086,16 8,14.2091 8,12C8,9.79086 9.79086,8 12,8C14.2091,8 16,9.79086 16,12Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.7175 2.5899C17.2214 1.81418 18.2974 1.8767 18.7263 2.69582L20 5L22.7071 7.70711C23.0976 8.09763 23.0976 8.73079 22.7071 9.12132C22.3166 9.51184 21.6834 9.51184 21.2929 9.12132L19 6.82843L18.1419 9.69582C17.9799 10.3318 17.3182 10.7177 16.6822 10.5558C16.0462 10.3938 15.6603 9.73206 15.8222 9.09608L17 5L15.2738 3.27375C14.5546 2.55462 14.5345 1.40748 15.2175 1.0899L16.7175 2.5899Z" fill="%23F5D0FE" /></svg>') 4 4, auto;
+}
+
+/* 공통 애니메이션 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes wandWave {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* 이미지 갤러리 커스텀 스타일 */
+.image-gallery-slide .image-gallery-image {
+  border-radius: 8px;
+}
+
+.image-gallery-thumbnail {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:focus,
+.image-gallery-thumbnail:hover {
+  border: 4px solid #D3A625;
+}
+
+.image-gallery-left-nav .image-gallery-svg,
+.image-gallery-right-nav .image-gallery-svg {
+  height: 60px;
+  width: 30px;
+}
+
+/* 폼 관련 애니메이션 */
+@keyframes formSuccess {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 별 반짝이기 배경 */
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.star.small {
+  width: 1px;
+  height: 1px;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.star.medium {
+  width: 2px;
+  height: 2px;
+  animation: twinkle 5s infinite ease-in-out;
+}
+
+.star.large {
+  width: 3px;
+  height: 3px;
+  animation: twinkle 7s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
