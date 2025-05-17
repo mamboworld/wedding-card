@@ -32,9 +32,25 @@ npm start
 npm run build
 ```
 
-## 배포
+## GitHub Pages 배포 방법
 
-Build 후에 생성되는 `build` 폴더를 웹 서버에 업로드하거나, GitHub Pages, Netlify, Vercel 등을 통해 손쉽게 배포할 수 있습니다.
+이 프로젝트는 GitHub Pages로 쉽게 배포할 수 있습니다:
+
+1. GitHub에 새 저장소 생성 (https://github.com/mamboworld/wedding-card)
+2. 로컬 저장소 연결:
+   ```bash
+   git remote add origin https://github.com/mamboworld/wedding-card.git
+   git branch -M main
+   git push -u origin main
+   ```
+3. GitHub Pages 배포:
+   ```bash
+   npm run deploy
+   ```
+4. GitHub 저장소 설정에서 GitHub Pages 활성화:
+   - Settings > Pages > Source를 'gh-pages' 브랜치로 설정
+
+배포 후에는 `https://mamboworld.github.io/wedding-card` 주소로 접속 가능합니다.
 
 ## 사용자 정의
 
