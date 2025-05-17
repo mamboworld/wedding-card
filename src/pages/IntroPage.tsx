@@ -16,10 +16,11 @@ const IntroPage: React.FC = () => {
 
   return (
     <PageLayout showNavigation={false}>
-      <div className="flex flex-col items-center">
+      {/* 스냅 스크롤을 위한 컨테이너 */}
+      <div className="flex flex-col items-center snap-y snap-mandatory h-screen overflow-y-scroll">
         {/* 첫 번째 섹션: 고정 배경 이미지와 기본 정보 */}
         <div 
-          className="min-h-screen w-full flex flex-col justify-center items-center relative pt-4"
+          className="min-h-screen w-full flex flex-col justify-center items-center relative pt-4 snap-start snap-always"
           style={{
             background: `url(${backgroundImage}) no-repeat center center`,
             backgroundSize: 'cover',
@@ -81,7 +82,7 @@ const IntroPage: React.FC = () => {
         {/* 두 번째 섹션: INVITE 문구 */}
         <div 
           id="invite"
-          className="min-h-screen w-full flex flex-col justify-center items-center relative"
+          className="min-h-screen w-full flex flex-col justify-center items-center relative snap-start snap-always"
           style={{
             background: `url(${backgroundImage}) no-repeat center center`,
             backgroundSize: 'cover',
@@ -126,7 +127,7 @@ const IntroPage: React.FC = () => {
         {/* 세 번째 섹션: 날짜와 장소 정보 */}
         <div 
           id="details"
-          className="min-h-screen w-full flex flex-col justify-center items-center relative"
+          className="min-h-screen w-full flex flex-col justify-center items-center relative snap-start snap-always"
           style={{
             background: `url(${backgroundImage}) no-repeat center center`,
             backgroundSize: 'cover',
@@ -142,14 +143,21 @@ const IntroPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-3xl font-korean-title text-amber-900 mb-2">{weddingInfo.date}</div>
-            <div className="text-2xl text-amber-800 font-korean-title mb-6">{weddingInfo.time}</div>
+            <div className="text-2xl font-korean-title text-amber-900 mb-6 whitespace-nowrap">
+              2025년 6월 28일 토요일
+            </div>
+            <div className="text-xl text-amber-800 font-korean-title mb-6">
+              오후 4시 10분
+            </div>
             
-            <div className="text-base text-amber-700 font-korean mb-1">
-              {weddingInfo.venue}
+            <div className="text-xl text-amber-700 font-korean font-semibold mb-2 whitespace-nowrap">
+              그레이스 파티
+            </div>
+            <div className="text-sm text-amber-700 font-korean mb-1">
+              서울특별시 관악구 신림동 1485-1번지
             </div>
             <div className="text-sm text-amber-700 font-korean">
-              {weddingInfo.address} / 신림역 5번 출구
+              신림역 2호선 근방
             </div>
             
             <div className="mt-8 inline-block px-6 py-2 bg-amber-700 text-white rounded-full font-korean shadow-lg">
