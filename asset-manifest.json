@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wedding-card/static/css/main.0b74eef1.css",
-    "main.js": "/wedding-card/static/js/main.91d8c36a.js",
+    "main.css": "/wedding-card/static/css/main.a00748bf.css",
+    "main.js": "/wedding-card/static/js/main.03958fbb.js",
     "static/js/453.94a8515f.chunk.js": "/wedding-card/static/js/453.94a8515f.chunk.js",
     "static/media/background_intro_wedding.png": "/wedding-card/static/media/background_intro_wedding.034936245c47a1bcb3bc.png",
     "static/media/image1.jpeg": "/wedding-card/static/media/image1.8c12b7cfa094766da797.jpeg",
@@ -9,12 +9,12 @@
     "static/media/shuttle_bus.jpg": "/wedding-card/static/media/shuttle_bus.6ad44aeae0698c739e45.jpg",
     "static/media/image3.jpeg": "/wedding-card/static/media/image3.a85a716e50a016caf96c.jpeg",
     "index.html": "/wedding-card/index.html",
-    "main.0b74eef1.css.map": "/wedding-card/static/css/main.0b74eef1.css.map",
-    "main.91d8c36a.js.map": "/wedding-card/static/js/main.91d8c36a.js.map",
+    "main.a00748bf.css.map": "/wedding-card/static/css/main.a00748bf.css.map",
+    "main.03958fbb.js.map": "/wedding-card/static/js/main.03958fbb.js.map",
     "453.94a8515f.chunk.js.map": "/wedding-card/static/js/453.94a8515f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b74eef1.css",
-    "static/js/main.91d8c36a.js"
+    "static/css/main.a00748bf.css",
+    "static/js/main.03958fbb.js"
   ]
 }
