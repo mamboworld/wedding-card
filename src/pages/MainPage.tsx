@@ -208,9 +208,9 @@ const MainPage: React.FC = () => {
                     className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
                     onClick={() => handleCallPerson('010-9769-4639')}
                   >
-                    <div className="text-left">
-                      <span className="text-xs text-gray-500 mb-1">신랑</span>
-                      <span className="font-semibold text-base text-amber-900">유예찬</span>
+                    <div className="flex flex-col items-center">
+                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신랑</span>
+                      <span className="font-semibold text-base text-amber-900 break-keep">유예찬</span>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -220,9 +220,9 @@ const MainPage: React.FC = () => {
                     className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
                     onClick={() => handleCallPerson('010-3993-4639')}
                   >
-                    <div className="text-left">
-                      <span className="text-xs text-gray-500 mb-1">신랑 아버지</span>
-                      <span className="font-semibold text-base text-amber-900">{weddingInfo.groomParents.father}</span>
+                    <div className="flex flex-col items-center">
+                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신랑 아버지</span>
+                      <span className="font-semibold text-base text-amber-900 break-keep">{weddingInfo.groomParents.father}</span>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -232,9 +232,9 @@ const MainPage: React.FC = () => {
                     className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
                     onClick={() => handleCallPerson('010-7722-4639')}
                   >
-                    <div className="text-left">
-                      <span className="text-xs text-gray-500 mb-1">신랑 어머니</span>
-                      <span className="font-semibold text-base text-amber-900">{weddingInfo.groomParents.mother}</span>
+                    <div className="flex flex-col items-center">
+                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신랑 어머니</span>
+                      <span className="font-semibold text-base text-amber-900 break-keep">{weddingInfo.groomParents.mother}</span>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -251,9 +251,9 @@ const MainPage: React.FC = () => {
                     className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
                     onClick={() => handleCallPerson('010-5664-0750')}
                   >
-                    <div className="text-left">
-                      <span className="text-xs text-gray-500 mb-1">신부</span>
-                      <span className="font-semibold text-base text-amber-900">{weddingInfo.brideName.split(' ')[0]}</span>
+                    <div className="flex flex-col items-center">
+                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신부</span>
+                      <span className="font-semibold text-base text-amber-900 break-keep">{weddingInfo.brideName.split(' ')[0]}</span>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -263,9 +263,9 @@ const MainPage: React.FC = () => {
                     className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
                     onClick={() => handleCallPerson('010-4702-0400')}
                   >
-                    <div className="text-left">
-                      <span className="text-xs text-gray-500 mb-1">신부 아버지</span>
-                      <span className="font-semibold text-base text-amber-900">{weddingInfo.brideParents.father}</span>
+                    <div className="flex flex-col items-center">
+                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신부 아버지</span>
+                      <span className="font-semibold text-base text-amber-900 break-keep">{weddingInfo.brideParents.father}</span>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -275,9 +275,9 @@ const MainPage: React.FC = () => {
                     className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
                     onClick={() => handleCallPerson('010-5553-0750')}
                   >
-                    <div className="text-left">
-                      <span className="text-xs text-gray-500 mb-1">신부 어머니</span>
-                      <span className="font-semibold text-base text-amber-900">{weddingInfo.brideParents.mother}</span>
+                    <div className="flex flex-col items-center">
+                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신부 어머니</span>
+                      <span className="font-semibold text-base text-amber-900 break-keep">{weddingInfo.brideParents.mother}</span>
                     </div>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
