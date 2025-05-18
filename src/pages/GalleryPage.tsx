@@ -3,43 +3,49 @@ import { motion } from 'framer-motion';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import PageLayout from '../components/layout/PageLayout';
-import ComingSoonBanner from '../components/ComingSoonBanner';
+// import ComingSoonBanner from '../components/ComingSoonBanner';
+import image1 from '../assets/images/image1.jpeg';
+import image2 from '../assets/images/image2.jpeg';
+import image3 from '../assets/images/image3.jpeg';
 
-// 임시 이미지 URL (나중에 실제 사진으로 교체)
 const images = [
   {
-    original: 'https://via.placeholder.com/800x600?text=Wedding+Photo+1',
-    thumbnail: 'https://via.placeholder.com/250x150?text=Photo+1',
-    description: '함께한 첫 여행',
+    original: image1,
+    thumbnail: image1,
+    description: '우리의 추억 1',
   },
   {
-    original: 'https://via.placeholder.com/800x600?text=Wedding+Photo+2',
-    thumbnail: 'https://via.placeholder.com/250x150?text=Photo+2',
-    description: '프로포즈 순간',
+    original: image2,
+    thumbnail: image2,
+    description: '우리의 추억 2',
   },
   {
-    original: 'https://via.placeholder.com/800x600?text=Wedding+Photo+3',
-    thumbnail: 'https://via.placeholder.com/250x150?text=Photo+3',
-    description: '우리의 추억',
-  },
-  {
-    original: 'https://via.placeholder.com/800x600?text=Wedding+Photo+4',
-    thumbnail: 'https://via.placeholder.com/250x150?text=Photo+4',
-    description: '특별한 날',
-  },
-  {
-    original: 'https://via.placeholder.com/800x600?text=Wedding+Photo+5',
-    thumbnail: 'https://via.placeholder.com/250x150?text=Photo+5',
-    description: '행복한 시간',
+    original: image3,
+    thumbnail: image3,
+    description: '우리의 추억 3',
   },
 ];
 
 const GalleryPage: React.FC = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
-  
+  const [showNotice, setShowNotice] = useState(true);
+
+  React.useEffect(() => {
+    const timer = setTimeout(() => setShowNotice(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <PageLayout>
-      <ComingSoonBanner />
+      {/* 6월 3일 업로드 예정 팝업 광고 */}
+      {showNotice && (
+        <div className="fixed top-8 left-1/2 z-50 -translate-x-1/2 bg-amber-100 border border-amber-300 shadow-xl rounded-xl px-6 py-4 flex items-center gap-3 animate-fade-in-out">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-amber-600 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
+          </svg>
+          <span className="text-amber-900 font-bold text-lg">웨딩사진은 6월 3일에 올라올 예정입니다!</span>
+        </div>
+      )}
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -92,13 +98,13 @@ const GalleryPage: React.FC = () => {
             <h2 className="text-xl font-bold mb-4">우리의 아름다운 추억</h2>
             <p className="text-gray-700 mb-4">
               유예찬과 박수희의 특별한 순간들을 담은 사진들입니다. 
-              오랜 시간 함께해온 우리의 이야기가 이 사진들 속에 담겨 있습니다.
+              함께해온 우리의 이야기가 이 사진들 속에 담겨 있습니다.
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="px-3 py-1 text-sm bg-hogwarts-gold/20 rounded-full">첫 만남</span>
               <span className="px-3 py-1 text-sm bg-hogwarts-gold/20 rounded-full">여행</span>
-              <span className="px-3 py-1 text-sm bg-hogwarts-gold/20 rounded-full">프로포즈</span>
               <span className="px-3 py-1 text-sm bg-hogwarts-gold/20 rounded-full">데이트</span>
+              <span className="px-3 py-1 text-sm bg-hogwarts-gold/20 rounded-full">웨딩사진(6월 3일 예정)</span>
             </div>
           </div>
           

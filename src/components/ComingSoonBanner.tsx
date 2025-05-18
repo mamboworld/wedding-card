@@ -24,8 +24,8 @@ const ComingSoonBanner: React.FC = () => {
         </motion.div>
         <h2 className="text-3xl font-korean-title text-amber-800 mb-4">준비 중입니다</h2>
         <p className="text-gray-700 mb-6">
-          더 나은 서비스를 위해 준비 중입니다.<br />
-          조금만 기다려주세요!
+          조금만 기다려주세요!<br />
+          웨딩 사진은 6월 3일에 올라올 예정입니다.
         </p>
         <div className="flex justify-center space-x-2">
           <motion.div 
