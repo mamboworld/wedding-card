@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
@@ -30,9 +30,13 @@ const GalleryPage: React.FC = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [showNotice, setShowNotice] = useState(true);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => setShowNotice(false), 3000);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   return (

@@ -375,7 +375,7 @@ const MainPage: React.FC = () => {
         </div>
         
         {/* 참석의사 전달하기 버튼 - 맨 아래 유지 */}
-        <div className="card">
+        <div className="card mb-4">
           <button 
             onClick={() => setShowRsvpModal(true)}
             className="w-full py-4 px-6 bg-amber-50 rounded-lg text-center hover:bg-amber-100 transition-colors flex justify-between items-center"
@@ -383,6 +383,15 @@ const MainPage: React.FC = () => {
             <span className="text-xl font-korean-title text-amber-800">참석 의사 전달하기</span>
             <span className="text-amber-700">▼</span>
           </button>
+        </div>
+        {/* 사진 구경하러가기 버튼 */}
+        <div className="card">
+          <Link 
+            to="/gallery"
+            className="w-full block py-4 px-6 bg-amber-200 rounded-lg text-center text-xl font-korean-title text-amber-900 hover:bg-amber-300 transition-colors"
+          >
+            📸 사진 구경하러가기
+          </Link>
         </div>
       </motion.div>
       
