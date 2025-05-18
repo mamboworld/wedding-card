@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import PageLayout from '../components/layout/PageLayout';
+import ComingSoonBanner from '../components/ComingSoonBanner';
 
 // 위시리스트 아이템 타입
 type WishlistItem = {
@@ -73,6 +74,8 @@ const WishlistPage: React.FC = () => {
   
   return (
     <PageLayout>
+      <ComingSoonBanner />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

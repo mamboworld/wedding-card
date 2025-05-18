@@ -6,7 +6,6 @@ import './App.css';
 import IntroPage from './pages/IntroPage';
 import MainPage from './pages/MainPage';
 import GalleryPage from './pages/GalleryPage';
-import RsvpPage from './pages/RsvpPage';
 import WishlistPage from './pages/WishlistPage';
 
 // 컨텍스트 
@@ -22,7 +21,6 @@ function App() {
             <Route path="/" element={<IntroPage />} />
             <Route path="/main" element={<MainPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="/rsvp" element={<RsvpPage />} />
             <Route path="/wishlist" element={<WishlistPage />} />
           </Routes>
         </div>

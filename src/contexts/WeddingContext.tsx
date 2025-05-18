@@ -11,6 +11,7 @@ type WeddingContextType = {
     address: string;
     date: string;
     time: string;
+    floor: string;
   };
   getDaysRemaining: () => number;
 };
@@ -20,10 +21,11 @@ const defaultWeddingInfo = {
   brideName: '박수희 (SOOHEE PARK)',
   groomParents: { father: '유병윤', mother: '김경숙' },
   brideParents: { father: '박성진', mother: '송덕심' },
-  venue: '그레이스 파티',
+  venue: '그레이스파티, 그레이스파티홀',
   address: '서울특별시 관악구 신림동 1485-1번지',
   date: '2025년 6월 28일 토요일',
   time: '오후 4시 10분',
+  floor: '(7F)'
 };
 
 const WeddingContext = createContext<WeddingContextType | undefined>(undefined);

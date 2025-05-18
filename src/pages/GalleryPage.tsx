@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import PageLayout from '../components/layout/PageLayout';
+import ComingSoonBanner from '../components/ComingSoonBanner';
 
 // 임시 이미지 URL (나중에 실제 사진으로 교체)
 const images = [
@@ -38,6 +39,8 @@ const GalleryPage: React.FC = () => {
   
   return (
     <PageLayout>
+      <ComingSoonBanner />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

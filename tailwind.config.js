@@ -19,6 +19,9 @@ module.exports = {
         'korean': ['Gowun Batang', 'serif'],
         'korean-title': ['Nanum Myeongjo', 'serif'],
       },
+      minWidth: {
+        '16': '4rem',
+      },
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'sparkle': 'sparkle 1.5s linear infinite',

@@ -160,3 +160,256 @@
     opacity: 1;
   }
 }
+
+/* 반짝이는 마법 효과 애니메이션 */
+.sparkle-effect {
+  background-image: 
+    radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.4) 2px, transparent 2px),
+    radial-gradient(circle, rgba(255,215,0,0.4) 1.5px, transparent 1.5px);
+  background-size: 30px 30px, 40px 40px, 35px 35px;
+  background-position: 0 0, 10px 10px, 20px 20px;
+  will-change: background-position;
+  animation: optimizedSparkle 8s linear infinite;
+}
+
+@keyframes optimizedSparkle {
+  0% {
+    opacity: 0.3;
+    background-position: 0 0, 10px 10px, 20px 20px;
+  }
+  50% {
+    opacity: 0.5;
+    background-position: 20px 20px, 30px 30px, 40px 40px;
+  }
+  100% {
+    opacity: 0.3;
+    background-position: 40px 40px, 50px 50px, 60px 60px;
+  }
+}
+
+/* 원형 카운트다운 타이머 스타일 */
+.magic-countdown-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.magic-countdown-block::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  background: linear-gradient(135deg, rgba(255,215,0,0.3) 0%, rgba(255,165,0,0.1) 50%, rgba(255,215,0,0.3) 100%);
+  animation: rotateGradient 5s ease-in-out infinite alternate;
+  z-index: 0;
+  filter: blur(5px);
+}
+
+@keyframes rotateGradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 숫자 변경 애니메이션 */
+@keyframes numberChange {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* 마법 파티클 효과 */
+.magic-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.magic-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: rgba(255, 215, 0, 0.4);
+  border-radius: 50%;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  animation: optimizedFloat 3s ease-in-out infinite;
+}
+
+@keyframes optimizedFloat {
+  0%, 10% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20%, 80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+/* 러블리 파티클 효과 */
+.lovely-particles-container {
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.lovely-particle {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform, opacity;
+  animation: lovelyFloat 15s ease-in-out infinite;
+  opacity: 0;
+  transform: translateZ(0);
+}
+
+.lovely-particle-heart {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  animation: lovelyHeart 15s ease-in-out infinite;
+}
+
+.lovely-particle-star {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z'/%3E%3C/svg%3E");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  animation: lovelyStar 15s ease-in-out infinite;
+}
+
+.lovely-particle-circle {
+  animation: lovelyCircle 15s ease-in-out infinite;
+}
+
+@keyframes lovelyFloat {
+  0%, 10% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  15%, 85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px);
+    opacity: 0;
+  }
+}
+
+@keyframes lovelyHeart {
+  0%, 10% {
+    transform: translateY(100vh) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(40vh) translateX(40px) scale(1);
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0) translateX(80px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes lovelyStar {
+  0%, 10% {
+    transform: translateY(100vh) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(40vh) translateX(-40px) scale(1);
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0) translateX(-80px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes lovelyCircle {
+  0%, 10% {
+    transform: translateY(100vh) translateX(0) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(40vh) translateX(60px) scale(1);
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(0) translateX(120px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* 향상된 버튼 스타일 */
+.magic-btn {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  border-radius: 9999px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.magic-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+  z-index: -1;
+}
+
+.magic-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.magic-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}

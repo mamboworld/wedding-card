@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import PageLayout from '../components/layout/PageLayout';
+import ComingSoonBanner from '../components/ComingSoonBanner';
 
 type FormInputs = {
   name: string;
@@ -28,6 +29,8 @@ const RsvpPage: React.FC = () => {
   
   return (
     <PageLayout>
+      <ComingSoonBanner />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
