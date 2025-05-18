@@ -12,6 +12,9 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.126",
+    "ajv": "^6.12.6",
+    "ajv-keywords": "^3.5.2",
+    "firebase": "^11.7.3",
     "framer-motion": "^12.12.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -20,7 +23,7 @@
     "react-router-dom": "^7.6.0",
     "react-scripts": "5.0.1",
     "react-swiper": "^0.1.5",
-    "typescript": "^4.9.5",
+    "typescript": "4.9.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

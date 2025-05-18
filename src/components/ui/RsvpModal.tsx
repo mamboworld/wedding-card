@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 type RsvpModalProps = {
   isOpen: boolean;
@@ -7,27 +9,38 @@ type RsvpModalProps = {
 };
 
 const RsvpModal: React.FC<RsvpModalProps> = ({ isOpen, onClose }) => {
+  const [side, setSide] = useState<'groom' | 'bride'>('groom');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [attendCount, setAttendCount] = useState(1);
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // 여기서 실제 데이터를 저장하거나 API 호출을 할 수 있습니다
-    console.log({ name, phone, attendCount, message });
-    setIsSubmitted(true);
-    
-    // 실제 구현에서는 서버에 데이터를 전송하고 성공 시 아래 코드 실행
-    setTimeout(() => {
-      setIsSubmitted(false);
-      resetForm();
-      onClose();
-    }, 2000);
+    try {
+      await addDoc(collection(db, 'rsvps'), {
+        side,
+        name,
+        phone,
+        attendCount,
+        message,
+        createdAt: new Date()
+      });
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        resetForm();
+        onClose();
+      }, 2000);
+    } catch (error) {
+      alert('저장 중 오류가 발생했습니다.');
+      console.error(error);
+    }
   };
 
   const resetForm = () => {
+    setSide('groom');
     setName('');
     setPhone('');
     setAttendCount(1);
@@ -66,20 +79,62 @@ const RsvpModal: React.FC<RsvpModalProps> = ({ isOpen, onClose }) => {
                 </div>
 
                 <form onSubmit={handleSubmit} className="p-6 space-y-4">
+                  {/* 구분 버튼 */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      이름
+                    <div className="text-lg font-korean-title text-gray-700 mb-2">구분</div>
+                    <div className="flex space-x-2 mb-2">
+                      <button
+                        type="button"
+                        className={`flex-1 py-2 rounded-md font-korean-title text-lg transition-colors ${side === 'groom' ? 'bg-amber-700 text-white' : 'bg-gray-200 text-gray-600'}`}
+                        onClick={() => setSide('groom')}
+                      >
+                        신랑측
+                      </button>
+                      <button
+                        type="button"
+                        className={`flex-1 py-2 rounded-md font-korean-title text-lg transition-colors ${side === 'bride' ? 'bg-amber-700 text-white' : 'bg-gray-200 text-gray-600'}`}
+                        onClick={() => setSide('bride')}
+                      >
+                        신부측
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* 참석자 성함 */}
+                  <div>
+                    <label htmlFor="name" className="block text-lg font-korean-title text-gray-700 mb-1">
+                      참석자 성함
                     </label>
                     <input
                       type="text"
                       id="name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-lg"
+                      placeholder="성함을 입력해 주세요."
                       required
                     />
                   </div>
 
+                  {/* 참석 인원 */}
+                  <div>
+                    <label htmlFor="attendCount" className="block text-lg font-korean-title text-gray-700 mb-1">
+                      인원
+                    </label>
+                    <input
+                      type="number"
+                      id="attendCount"
+                      min={1}
+                      max={20}
+                      value={attendCount}
+                      onChange={(e) => setAttendCount(Number(e.target.value))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-lg"
+                      placeholder="외 0명"
+                      required
+                    />
+                  </div>
+
+                  {/* 연락처 */}
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                       연락처
@@ -94,24 +149,7 @@ const RsvpModal: React.FC<RsvpModalProps> = ({ isOpen, onClose }) => {
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="attendCount" className="block text-sm font-medium text-gray-700 mb-1">
-                      참석 인원
-                    </label>
-                    <select
-                      id="attendCount"
-                      value={attendCount}
-                      onChange={(e) => setAttendCount(Number(e.target.value))}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    >
-                      {[1, 2, 3, 4, 5, 6].map((num) => (
-                        <option key={num} value={num}>
-                          {num}명
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-
+                  {/* 메시지 */}
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                       메시지 (선택사항)

@@ -61,11 +61,11 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ eventDate, coupleName }
       </div>
       
       {/* 타임스탬프 표시 - 인트로 페이지 스타일과 동일하게 */}
-      <div className="grid grid-cols-4 gap-4 justify-items-center">
+      <div className="flex w-full">
         {timeLabels.map((timeItem) => (
           <motion.div 
             key={timeItem.key}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center w-1/4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}

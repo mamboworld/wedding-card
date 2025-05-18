@@ -92,13 +92,8 @@ const CalendarDisplay: React.FC<CalendarDisplayProps> = ({ date, highlightDate }
     <div className="relative bg-gray-50 rounded-lg p-4 shadow-md overflow-hidden">
       {/* 달력 헤더 */}
       <div className="text-center mb-4">
-        <div className="text-xl font-korean-title text-amber-700">
-          {`${calendarData.year}년 ${getMonthName(calendarData.month)}`}
-        </div>
-        <div className="text-lg text-amber-600">
-          {date.getDate() === highlightDate 
-            ? `${highlightDate}일 ${['일', '월', '화', '수', '목', '금', '토'][date.getDay()]}요일` 
-            : ''}
+        <div className="text-lg text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md font-semibold inline-block">
+          {`${calendarData.year}년 ${getMonthName(calendarData.month)} ${highlightDate}일 ${['일', '월', '화', '수', '목', '금', '토'][new Date(date.getFullYear(), date.getMonth(), highlightDate).getDay()]}요일`}
         </div>
       </div>
       

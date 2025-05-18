@@ -277,6 +277,11 @@ const IntroPage: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
+            {/* 영문 문구 추가 */}
+            <div className="mb-2">
+              <div className="text-5xl font-magic text-amber-500 leading-none mb-0">We are</div>
+              <div className="text-5xl font-magic text-amber-500 leading-none mt-0">getting married</div>
+            </div>
             <h1 className="magic-title text-5xl mb-4 text-amber-700">결혼합니다</h1>
             
             <motion.div
@@ -340,10 +345,10 @@ const IntroPage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl font-korean-title text-amber-700 text-center mb-6">INVITE</h2>
-            <p className="text-lg leading-relaxed text-gray-800 font-korean text-center">
+            <h2 className="text-4xl md:text-5xl font-bold font-korean-title text-amber-700 text-center mb-6">INVITE</h2>
+            <p className="text-lg md:text-xl leading-relaxed text-gray-800 font-korean text-center font-normal">
               따사로운 햇살 속에 시작된 이야기<br />
-              여름밤 별이 증인이 되어 줍니다<br />
+              여름밤 별이 증인이 되어 줍니다.<br />
               이제 맞이할 모든 계절도<br />
               늘 함께하며 깊어져가겠습니다.<br />
               함께 자리하여 축복해주세요.
@@ -391,10 +396,11 @@ const IntroPage: React.FC = () => {
               href={NAVER_MAP_URL} 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-2xl text-amber-700 font-korean font-semibold mb-2 hover:text-amber-500 transition-colors"
+              className="inline-flex items-center text-base text-amber-700 font-korean font-semibold mb-2 hover:text-amber-500 transition-colors whitespace-nowrap"
+              style={{maxWidth: '100%', overflow: 'hidden', textOverflow: 'ellipsis'}}
             >
               {weddingInfo.venue} {weddingInfo.floor}
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
             </a>

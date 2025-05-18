@@ -71,11 +71,30 @@ const MainPage: React.FC = () => {
           
           <div className="w-full border-t border-amber-200 my-6"></div>
           
-          <h2 className="text-2xl font-magic text-hogwarts-gold mb-4">D-{daysRemaining}</h2>
+          {/* 장소 정보 및 네이버 지도 링크 추가 */}
+          <div className="mb-4">
+            <div className="text-xl font-korean-title text-amber-800 mb-1">Wedding Venue</div>
+            <a 
+              href="https://naver.me/F9N45Mo5" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-xl text-amber-700 font-korean font-semibold mb-1 hover:text-amber-500 transition-colors"
+            >
+              {weddingInfo.venue} {weddingInfo.floor}
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+            </a>
+            <div className="text-xs text-gray-600 font-korean">
+              {weddingInfo.address}
+            </div>
+          </div>
+          
           <div className="text-center">
             <div className="text-xl mb-2">{weddingInfo.date}</div>
             <div className="text-lg text-gray-700">{weddingInfo.time}</div>
           </div>
+          {/* <h2 className="text-2xl font-magic text-hogwarts-gold mb-4">D-{daysRemaining}</h2> */}
         </div>
         
         {/* 달력 및 카운트다운 타이머 추가 */}
@@ -187,22 +206,7 @@ const MainPage: React.FC = () => {
                 <div className="grid grid-cols-3 gap-2">
                   <button 
                     className="bg-hogwarts-gold/10 p-3 rounded-lg flex justify-between items-center"
-                    onClick={() => handleCallPerson('01034567890')}
-                  >
-                    <div className="text-left">
-                      <span className="text-sm text-gray-500">아버지</span>
-                      <div className="flex items-center gap-1">
-                        <span className="font-medium">{weddingInfo.groomParents.father}</span>
-                      </div>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                  </button>
-                  
-                  <button 
-                    className="bg-hogwarts-gold/10 p-3 rounded-lg flex justify-between items-center"
-                    onClick={() => handleCallPerson('01012345678')}
+                    onClick={() => handleCallPerson('010-9769-4639')}
                   >
                     <div className="text-left">
                       <span className="text-sm text-gray-500">신랑</span>
@@ -214,13 +218,26 @@ const MainPage: React.FC = () => {
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </button>
-                  
                   <button 
                     className="bg-hogwarts-gold/10 p-3 rounded-lg flex justify-between items-center"
-                    onClick={() => handleCallPerson('01056789012')}
+                    onClick={() => handleCallPerson('010-3993-4639')}
                   >
                     <div className="text-left">
-                      <span className="text-sm text-gray-500">어머니</span>
+                      <span className="text-sm text-gray-500">신랑 아버지</span>
+                      <div className="flex items-center gap-1">
+                        <span className="font-medium">{weddingInfo.groomParents.father}</span>
+                      </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                  </button>
+                  <button 
+                    className="bg-hogwarts-gold/10 p-3 rounded-lg flex justify-between items-center"
+                    onClick={() => handleCallPerson('010-7722-4639')}
+                  >
+                    <div className="text-left">
+                      <span className="text-sm text-gray-500">신랑 어머니</span>
                       <div className="flex items-center gap-1">
                         <span className="font-medium">{weddingInfo.groomParents.mother}</span>
                       </div>
@@ -238,22 +255,7 @@ const MainPage: React.FC = () => {
                 <div className="grid grid-cols-3 gap-2">
                   <button 
                     className="bg-hogwarts-gold/10 p-3 rounded-lg flex justify-between items-center"
-                    onClick={() => handleCallPerson('01045678901')}
-                  >
-                    <div className="text-left">
-                      <span className="text-sm text-gray-500">아버지</span>
-                      <div className="flex items-center gap-1">
-                        <span className="font-medium">{weddingInfo.brideParents.father}</span>
-                      </div>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                  </button>
-                  
-                  <button 
-                    className="bg-hogwarts-gold/10 p-3 rounded-lg flex justify-between items-center"
-                    onClick={() => handleCallPerson('01023456789')}
+                    onClick={() => handleCallPerson('010-5664-0750')}
                   >
                     <div className="text-left">
                       <span className="text-sm text-gray-500">신부</span>
@@ -265,15 +267,34 @@ const MainPage: React.FC = () => {
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </button>
-                  
-                  <div className="bg-hogwarts-gold/10 p-3 rounded-lg flex justify-between items-center opacity-50">
+                  <button 
+                    className="bg-hogwarts-gold/10 p-3 rounded-lg flex justify-between items-center"
+                    onClick={() => handleCallPerson('010-4702-0400')}
+                  >
                     <div className="text-left">
-                      <span className="text-sm text-gray-500">어머니</span>
+                      <span className="text-sm text-gray-500">신부 아버지</span>
+                      <div className="flex items-center gap-1">
+                        <span className="font-medium">{weddingInfo.brideParents.father}</span>
+                      </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                  </button>
+                  <button 
+                    className="bg-hogwarts-gold/10 p-3 rounded-lg flex justify-between items-center"
+                    onClick={() => handleCallPerson('010-5553-0750')}
+                  >
+                    <div className="text-left">
+                      <span className="text-sm text-gray-500">신부 어머니</span>
                       <div className="flex items-center gap-1">
                         <span className="font-medium">{weddingInfo.brideParents.mother}</span>
                       </div>
                     </div>
-                  </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             </div>
