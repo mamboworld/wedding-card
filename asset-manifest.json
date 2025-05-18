@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/wedding-card/static/css/main.0a2e609f.css",
+    "main.js": "/wedding-card/static/js/main.f78f9caf.js",
+    "static/js/453.94a8515f.chunk.js": "/wedding-card/static/js/453.94a8515f.chunk.js",
+    "index.html": "/wedding-card/index.html",
+    "main.0a2e609f.css.map": "/wedding-card/static/css/main.0a2e609f.css.map",
+    "main.f78f9caf.js.map": "/wedding-card/static/js/main.f78f9caf.js.map",
+    "453.94a8515f.chunk.js.map": "/wedding-card/static/js/453.94a8515f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0a2e609f.css",
+    "static/js/main.f78f9caf.js"
+  ]
+}
