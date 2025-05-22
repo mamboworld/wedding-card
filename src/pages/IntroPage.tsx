@@ -249,7 +249,7 @@ const IntroPage: React.FC = () => {
   }, []);
 
   return (
-    <PageLayout showNavigation={false}>
+    <PageLayout showNavigation={false} backgroundImage={backgroundImage}>
       {/* 러블리 파티클 배경 */}
       {/* <LovelyParticles /> */}
       
@@ -261,15 +261,8 @@ const IntroPage: React.FC = () => {
         {/* 첫 번째 섹션: 고정 배경 이미지와 기본 정보 */}
         <div 
           className="min-h-screen w-full flex flex-col justify-center items-center relative pt-4 snap-start snap-always snap-section"
-          style={{
-            background: `url(${backgroundImage}) no-repeat center center`,
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
-          }}
         >
           {/* 이미지 위에 반투명 오버레이 추가 */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-white/70 backdrop-blur-sm"></div>
           
           <motion.div 
             className="text-center relative z-10 px-6 md:px-12 max-w-sm mx-auto"
@@ -329,15 +322,7 @@ const IntroPage: React.FC = () => {
         <div 
           id="invite"
           className="min-h-screen w-full flex flex-col justify-center items-center relative snap-start snap-always snap-section"
-          style={{
-            background: `url(${backgroundImage}) no-repeat center center`,
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
-          }}
         >
-          <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
-          
           <motion.div
             className="relative z-10 p-8 bg-white/80 backdrop-blur-sm rounded-xl shadow-lg max-w-sm mx-auto"
             initial={{ opacity: 0, y: 50 }}
@@ -375,15 +360,7 @@ const IntroPage: React.FC = () => {
         <div 
           id="details"
           className="min-h-screen w-full flex flex-col justify-center items-center relative snap-start snap-always snap-section"
-          style={{
-            background: `url(${backgroundImage}) no-repeat center center`,
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
-          }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-white/50 to-white/80 backdrop-blur-sm"></div>
-          
           <motion.div
             className="relative z-10 text-center px-6 md:px-10 max-w-md mx-auto bg-white/40 backdrop-blur-sm p-8 rounded-xl shadow-lg"
             initial={{ opacity: 0, y: 50 }}
@@ -434,7 +411,7 @@ const IntroPage: React.FC = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-12 relative z-10 w-full flex flex-col items-center justify-center"
+            className="mt-8 relative z-10 w-full flex flex-col items-center justify-center"
           >
             <Link 
               to="/main" 
