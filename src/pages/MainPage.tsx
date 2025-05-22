@@ -41,7 +41,7 @@ const MainPage: React.FC = () => {
   const textShadowForWhiteBg = '1px 1px 2px rgba(0,0,0,0.2)'; 
 
   return (
-    <PageLayout backgroundImage={introBackgroundImage}>
+    <PageLayout backgroundImage={introBackgroundImage} showNavigation={!showRsvpModal}>
       {/* 인트로 페이지로 이동하는 버튼 - 위치 재조정 */}
       <div className="w-full flex justify-end p-4">
         <Link 
