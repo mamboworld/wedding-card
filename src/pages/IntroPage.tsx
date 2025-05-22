@@ -434,10 +434,10 @@ const IntroPage: React.FC = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-12 relative z-10 flex flex-col sm:flex-row items-center justify-center"
+            className="mt-12 relative z-10 w-full flex flex-col items-center justify-center"
           >
             <motion.div 
-              className="mr-0 sm:mr-2 mb-2 sm:mb-0 flex items-center"
+              className="mb-2 flex items-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.5 }}
