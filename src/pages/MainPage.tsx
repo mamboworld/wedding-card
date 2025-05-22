@@ -177,44 +177,44 @@ const MainPage: React.FC = () => {
       
       <motion.div className="mb-10" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}>
         <div className={`${cardBaseStyle}`} >
-          <ToggleSection title="혼주에게 연락하기" customBgColor="bg-transparent" titleClassName="text-amber-800" initiallyOpen={false} noPadding={true} >
+          <ToggleSection title="혼주에게 연락하기" customBgColor="bg-transparent" titleClassName="text-2xl font-korean-display text-amber-800" initiallyOpen={false} noPadding={true} >
             <div className="space-y-4 mt-4" style={{ textShadow: textShadowForWhiteBg }}>
               <div className="p-3 bg-amber-50/60 rounded-lg">
-                <h3 className="text-sm font-semibold text-amber-800 mb-3">신랑측 혼주</h3>
+                <h3 className="text-lg font-korean-title text-amber-800 mb-3">신랑측 혼주</h3>
                 <div className="grid grid-cols-3 gap-4 md:gap-6">
-                  <button 
-                    className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
+                  <button
+                    className="bg-white/70 p-4 rounded-xl flex flex-col items-center justify-center min-h-[90px] shadow-md hover:bg-amber-100/70 transition-all duration-300 ring-1 ring-amber-200/50 hover:ring-amber-300"
                     onClick={() => handleCallPerson('010-9769-4639')}
                   >
                     <div className="flex flex-col items-center">
-                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신랑</span>
+                      <span className="text-xs text-gray-500 leading-tight mb-1 break-keep">신랑</span>
                       <span className="font-semibold text-base text-amber-900 break-keep">유예찬</span>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1.5" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </button>
-                  <button 
-                    className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
+                  <button
+                    className="bg-white/70 p-4 rounded-xl flex flex-col items-center justify-center min-h-[90px] shadow-md hover:bg-amber-100/70 transition-all duration-300 ring-1 ring-amber-200/50 hover:ring-amber-300"
                     onClick={() => handleCallPerson('010-3993-4639')}
                   >
                     <div className="flex flex-col items-center">
-                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신랑 아버지</span>
+                      <span className="text-xs text-gray-500 leading-tight mb-1 break-keep">신랑 아버지</span>
                       <span className="font-semibold text-base text-amber-900 break-keep">{weddingInfo.groomParents.father}</span>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1.5" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </button>
-                  <button 
-                    className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
+                  <button
+                    className="bg-white/70 p-4 rounded-xl flex flex-col items-center justify-center min-h-[90px] shadow-md hover:bg-amber-100/70 transition-all duration-300 ring-1 ring-amber-200/50 hover:ring-amber-300"
                     onClick={() => handleCallPerson('010-7722-4639')}
                   >
                     <div className="flex flex-col items-center">
-                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신랑 어머니</span>
+                      <span className="text-xs text-gray-500 leading-tight mb-1 break-keep">신랑 어머니</span>
                       <span className="font-semibold text-base text-amber-900 break-keep">{weddingInfo.groomParents.mother}</span>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1.5" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </button>
@@ -222,41 +222,41 @@ const MainPage: React.FC = () => {
               </div>
               
               <div className="p-3 bg-amber-50/60 rounded-lg">
-                <h3 className="text-sm font-semibold text-amber-800 mb-3">신부측 혼주</h3>
+                <h3 className="text-lg font-korean-title text-amber-800 mb-3">신부측 혼주</h3>
                 <div className="grid grid-cols-3 gap-4 md:gap-6">
-                  <button 
-                    className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
+                  <button
+                    className="bg-white/70 p-4 rounded-xl flex flex-col items-center justify-center min-h-[90px] shadow-md hover:bg-amber-100/70 transition-all duration-300 ring-1 ring-amber-200/50 hover:ring-amber-300"
                     onClick={() => handleCallPerson('010-5664-0750')}
                   >
                     <div className="flex flex-col items-center">
-                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신부</span>
+                      <span className="text-xs text-gray-500 leading-tight mb-1 break-keep">신부</span>
                       <span className="font-semibold text-base text-amber-900 break-keep">{weddingInfo.brideName.split(' ')[0]}</span>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1.5" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </button>
-                  <button 
-                    className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
+                  <button
+                    className="bg-white/70 p-4 rounded-xl flex flex-col items-center justify-center min-h-[90px] shadow-md hover:bg-amber-100/70 transition-all duration-300 ring-1 ring-amber-200/50 hover:ring-amber-300"
                     onClick={() => handleCallPerson('010-4702-0400')}
                   >
                     <div className="flex flex-col items-center">
-                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신부 아버지</span>
+                      <span className="text-xs text-gray-500 leading-tight mb-1 break-keep">신부 아버지</span>
                       <span className="font-semibold text-base text-amber-900 break-keep">{weddingInfo.brideParents.father}</span>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1.5" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </button>
-                  <button 
-                    className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
+                  <button
+                    className="bg-white/70 p-4 rounded-xl flex flex-col items-center justify-center min-h-[90px] shadow-md hover:bg-amber-100/70 transition-all duration-300 ring-1 ring-amber-200/50 hover:ring-amber-300"
                     onClick={() => handleCallPerson('010-5553-0750')}
                   >
                     <div className="flex flex-col items-center">
-                      <span className="text-[11px] text-gray-500 leading-tight mb-1 break-keep">신부 어머니</span>
+                      <span className="text-xs text-gray-500 leading-tight mb-1 break-keep">신부 어머니</span>
                       <span className="font-semibold text-base text-amber-900 break-keep">{weddingInfo.brideParents.mother}</span>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-amber-600 mt-1.5" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                     </svg>
                   </button>
@@ -269,69 +269,69 @@ const MainPage: React.FC = () => {
       
       <motion.div className="mb-10" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}>
         <div className={`${cardBaseStyle}`} >
-          <ToggleSection title="마음 전하실 곳" customBgColor="bg-transparent" titleClassName="text-amber-800" initiallyOpen={false} noPadding={true}>
+          <ToggleSection title="마음 전하실 곳" customBgColor="bg-transparent" titleClassName="text-2xl font-korean-display text-amber-800" initiallyOpen={false} noPadding={true}>
             <div className="space-y-3 mt-4" style={{ textShadow: textShadowForWhiteBg }}>
               <div className="p-3 bg-amber-50/60 rounded-lg">
-                <h3 className="text-sm font-semibold text-amber-800 mb-2">신랑측 계좌번호</h3>
+                <h3 className="text-lg font-korean-title text-amber-800 mb-2">신랑측 계좌번호</h3>
                 <div className="space-y-3">
                   <button 
-                    className="w-full bg-white p-3 rounded-lg border border-gray-200 flex justify-between items-center"
+                    className="w-full bg-white/90 p-3.5 rounded-lg border border-amber-200/70 flex justify-between items-center hover:bg-amber-50/80 transition-colors duration-300 shadow-sm hover:shadow-md"
                     onClick={() => handleCopyAccount('신랑', '3333-16-464095')}
                   >
                     <div className="text-left">
                       <div className="text-sm text-gray-500">신랑</div>
-                      <div className="font-medium">카카오뱅크 3333-16-464095</div>
-                      <div className="text-sm">유예찬</div>
+                      <div className="font-medium text-amber-800">카카오뱅크 3333-16-464095</div>
+                      <div className="text-sm text-amber-700">유예찬</div>
                     </div>
-                    <div className="text-sm text-hogwarts-red">
-                      {copiedAccount === '신랑' ? '복사 완료!' : '복사'}
+                    <div className="text-sm font-semibold text-amber-600 hover:text-amber-700">
+                      {copiedAccount === '신랑' ? '복사 완료 ✔' : '복사하기'}
                     </div>
                   </button>
                   
                   <button 
-                    className="w-full bg-white p-3 rounded-lg border border-gray-200 flex justify-between items-center"
+                    className="w-full bg-white/90 p-3.5 rounded-lg border border-amber-200/70 flex justify-between items-center hover:bg-amber-50/80 transition-colors duration-300 shadow-sm hover:shadow-md"
                     onClick={() => handleCopyAccount('신랑부', '356-0729-3940-23')}
                   >
                     <div className="text-left">
                       <div className="text-sm text-gray-500">신랑 부모님</div>
-                      <div className="font-medium">농협 356-0729-3940-23</div>
-                      <div className="text-sm">유병윤</div>
+                      <div className="font-medium text-amber-800">농협 356-0729-3940-23</div>
+                      <div className="text-sm text-amber-700">유병윤</div>
                     </div>
-                    <div className="text-sm text-hogwarts-red">
-                      {copiedAccount === '신랑부' ? '복사 완료!' : '복사'}
+                    <div className="text-sm font-semibold text-amber-600 hover:text-amber-700">
+                      {copiedAccount === '신랑부' ? '복사 완료 ✔' : '복사하기'}
                     </div>
                   </button>
                 </div>
               </div>
               
               <div className="p-3 bg-amber-50/60 rounded-lg">
-                <h3 className="text-sm font-semibold text-amber-800 mb-2">신부측 계좌번호</h3>
+                <h3 className="text-lg font-korean-title text-amber-800 mb-2">신부측 계좌번호</h3>
                 <div className="space-y-3">
                   <button 
-                    className="w-full bg-white p-3 rounded-lg border border-gray-200 flex justify-between items-center"
+                    className="w-full bg-white/90 p-3.5 rounded-lg border border-amber-200/70 flex justify-between items-center hover:bg-amber-50/80 transition-colors duration-300 shadow-sm hover:shadow-md"
                     onClick={() => handleCopyAccount('신부', '100-120-660063')}
                   >
                     <div className="text-left">
                       <div className="text-sm text-gray-500">신부</div>
-                      <div className="font-medium">케이뱅크 100-120-660063</div>
-                      <div className="text-sm">박수희</div>
+                      <div className="font-medium text-amber-800">케이뱅크 100-120-660063</div>
+                      <div className="text-sm text-amber-700">박수희</div>
                     </div>
-                    <div className="text-sm text-hogwarts-red">
-                      {copiedAccount === '신부' ? '복사 완료!' : '복사'}
+                    <div className="text-sm font-semibold text-amber-600 hover:text-amber-700">
+                      {copiedAccount === '신부' ? '복사 완료 ✔' : '복사하기'}
                     </div>
                   </button>
                   
                   <button 
-                    className="w-full bg-white p-3 rounded-lg border border-gray-200 flex justify-between items-center"
+                    className="w-full bg-white/90 p-3.5 rounded-lg border border-amber-200/70 flex justify-between items-center hover:bg-amber-50/80 transition-colors duration-300 shadow-sm hover:shadow-md"
                     onClick={() => handleCopyAccount('신부부', '831-24-0132392')}
                   >
                     <div className="text-left">
                       <div className="text-sm text-gray-500">신부 부모님</div>
-                      <div className="font-medium">국민 831-24-0132392</div>
-                      <div className="text-sm">송덕심</div>
+                      <div className="font-medium text-amber-800">국민 831-24-0132392</div>
+                      <div className="text-sm text-amber-700">송덕심</div>
                     </div>
-                    <div className="text-sm text-hogwarts-red">
-                      {copiedAccount === '신부부' ? '복사 완료!' : '복사'}
+                    <div className="text-sm font-semibold text-amber-600 hover:text-amber-700">
+                      {copiedAccount === '신부부' ? '복사 완료 ✔' : '복사하기'}
                     </div>
                   </button>
                 </div>
