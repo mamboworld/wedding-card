@@ -436,21 +436,6 @@ const IntroPage: React.FC = () => {
             transition={{ duration: 1, delay: 0.5 }}
             className="mt-12 relative z-10 w-full flex flex-col items-center justify-center"
           >
-            <motion.div 
-              className="mb-2 flex items-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.5 }}
-            >
-              <motion.span 
-                className="mr-1 text-sm font-korean text-amber-700"
-                animate={{ opacity: [0.7, 1, 0.7] }}
-                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-              >
-                여기를 클릭하세요
-              </motion.span>
-              <span className="text-2xl text-amber-700" role="img" aria-label="pointing right emoji">👉</span>
-            </motion.div>
             <Link 
               to="/main" 
               className="magic-btn inline-block font-korean bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 shadow-xl px-6 py-3 rounded-full text-white transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1"
@@ -464,6 +449,21 @@ const IntroPage: React.FC = () => {
                 →
               </motion.span>
             </Link>
+            <motion.div 
+              className="mb-2 flex items-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+            >
+              <motion.span 
+                className="mr-1 text-sm font-korean text-amber-700"
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              >
+                여기를 클릭하세요
+              </motion.span>
+              <span className="text-2xl text-amber-700" role="img" aria-label="pointing Up emoji">👆</span>
+            </motion.div>
           </motion.div>
         </div>
         
