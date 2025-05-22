@@ -15,9 +15,23 @@ const RsvpModal: React.FC<RsvpModalProps> = ({ isOpen, onClose }) => {
   const [attendCount, setAttendCount] = useState(1);
   const [message, setMessage] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
+
+  const validatePhone = (phoneNumber: string): boolean => {
+    // 대한민국 전화번호 형식 (하이픈 포함/미포함, 10-11자리)
+    const phoneRegex = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+    return phoneRegex.test(phoneNumber);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!validatePhone(phone)) {
+      setPhoneError('올바른 전화번호 형식이 아닙니다. (예: 010-1234-5678 또는 01012345678)');
+      return;
+    }
+    setPhoneError(''); // Clear error if validation passes
+
     try {
       await addDoc(collection(db, 'rsvps'), {
         side,
@@ -45,6 +59,7 @@ const RsvpModal: React.FC<RsvpModalProps> = ({ isOpen, onClose }) => {
     setPhone('');
     setAttendCount(1);
     setMessage('');
+    setPhoneError('');
   };
 
   return (
@@ -121,17 +136,19 @@ const RsvpModal: React.FC<RsvpModalProps> = ({ isOpen, onClose }) => {
                     <label htmlFor="attendCount" className="block text-lg font-korean-title text-gray-700 mb-1">
                       인원
                     </label>
-                    <input
-                      type="number"
+                    <select
                       id="attendCount"
-                      min={1}
-                      max={20}
                       value={attendCount}
                       onChange={(e) => setAttendCount(Number(e.target.value))}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500 text-lg"
-                      placeholder="외 0명"
                       required
-                    />
+                    >
+                      {Array.from({ length: 10 }, (_, i) => i + 1).map(count => (
+                        <option key={count} value={count}>
+                          {count}명
+                        </option>
+                      ))}
+                    </select>
                   </div>
 
                   {/* 연락처 */}
@@ -143,10 +160,14 @@ const RsvpModal: React.FC<RsvpModalProps> = ({ isOpen, onClose }) => {
                       type="tel"
                       id="phone"
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                      onChange={(e) => {
+                        setPhone(e.target.value);
+                        if (phoneError) setPhoneError(''); // Clear error on typing
+                      }}
+                      className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 ${phoneError ? 'border-red-500 focus:ring-red-500' : 'border-gray-300 focus:ring-amber-500'}`}
                       required
                     />
+                    {phoneError && <p className="text-red-500 text-xs mt-1">{phoneError}</p>}
                   </div>
 
                   {/* 메시지 */}

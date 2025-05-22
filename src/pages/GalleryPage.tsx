@@ -4,9 +4,9 @@ import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import PageLayout from '../components/layout/PageLayout';
 // import ComingSoonBanner from '../components/ComingSoonBanner';
-import image1 from '../assets/images/image1.jpeg';
-import image2 from '../assets/images/image2.jpeg';
-import image3 from '../assets/images/image3.jpeg';
+import image1 from '../assets/images/image1.jpg';
+import image2 from '../assets/images/image2.jpg';
+import image3 from '../assets/images/image3.jpg';
 
 const images = [
   {

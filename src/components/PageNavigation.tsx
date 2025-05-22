@@ -10,7 +10,6 @@ const PageNavigation: React.FC = () => {
   const pages = [
     { name: '정보', path: '/main', icon: '📝' },
     { name: '사진', path: '/gallery', icon: '🖼️' },
-    { name: '선물', path: '/wishlist', icon: '🎁' },
   ];
   
   // 현재 페이지 인덱스 찾기

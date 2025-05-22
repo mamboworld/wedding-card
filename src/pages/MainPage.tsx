@@ -8,6 +8,7 @@ import ToggleSection from '../components/ui/ToggleSection';
 import CalendarDisplay from '../components/ui/CalendarDisplay';
 import CountdownTimer from '../components/ui/CountdownTimer';
 import RsvpModal from '../components/ui/RsvpModal';
+import introBackgroundImage from '../assets/images/background_intro_wedding.jpg';
 
 const MainPage: React.FC = () => {
   const { weddingInfo, getDaysRemaining, eventDate } = useWedding();
@@ -34,10 +35,13 @@ const MainPage: React.FC = () => {
     window.location.href = `tel:${phoneNumber}`;
   };
 
+  const textShadowLight = '1px 1px 2px rgba(0,0,0,0.4)'; // 밝은 배경 위 어두운 그림자
+  const textShadowDark = '1px 1px 2px rgba(255,255,255,0.6)'; // 어두운 배경 위 밝은 그림자 (주로 버튼 등)
+
   return (
-    <PageLayout>
+    <PageLayout backgroundImage={introBackgroundImage}>
       {/* 인트로 페이지로 이동하는 버튼 - 위치 재조정 */}
-      <div className="fixed top-4 right-4 z-40">
+      <div className="w-full flex justify-end p-4">
         <Link 
           to="/" 
           className="bg-white/80 backdrop-blur-md p-3 rounded-full shadow-lg border border-amber-100 hover:bg-amber-100 transition-colors flex items-center justify-center"
@@ -55,50 +59,50 @@ const MainPage: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <h1 className="magic-title mb-6 text-center">Our Wedding</h1>
+        <h1 className="magic-title mb-6 text-center text-amber-100" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.6)' }}>Our Wedding</h1>
         
         {/* 신랑/신부 정보와 D-day 정보를 하나의 카드로 통합 */}
-        <div className="card mb-8 text-center">
-          <div className="text-3xl font-korean-title text-amber-800 mb-4">
-            {weddingInfo.groomName.split(' ')[0]} <span className="text-amber-600">♥</span> {weddingInfo.brideName.split(' ')[0]}
+        <div className="shadow-xl rounded-xl p-6 md:p-8 mb-8 text-center" style={{ textShadow: textShadowLight }}>
+          <div className="text-3xl font-korean-title text-amber-100 mb-4">
+            {weddingInfo.groomName.split(' ')[0]} <span className="text-amber-50">♥</span> {weddingInfo.brideName.split(' ')[0]}
           </div>
-          <div className="text-lg text-gray-800 mb-1 font-korean">
-            <span className="font-semibold text-amber-700">{weddingInfo.groomParents.father} • {weddingInfo.groomParents.mother}</span>의 장남 {weddingInfo.groomName.split(' ')[0]}
+          <div className="text-lg text-gray-100 mb-1 font-korean">
+            <span className="font-semibold text-amber-50">{weddingInfo.groomParents.father} • {weddingInfo.groomParents.mother}</span>의 장남 {weddingInfo.groomName.split(' ')[0]}
           </div>
-          <div className="text-lg text-gray-800 font-korean mb-6">
-            <span className="font-semibold text-amber-700">{weddingInfo.brideParents.father} • {weddingInfo.brideParents.mother}</span>의 장녀 {weddingInfo.brideName.split(' ')[0]}
+          <div className="text-lg text-gray-100 font-korean mb-6">
+            <span className="font-semibold text-amber-50">{weddingInfo.brideParents.father} • {weddingInfo.brideParents.mother}</span>의 장녀 {weddingInfo.brideName.split(' ')[0]}
           </div>
           
-          <div className="w-full border-t border-amber-200 my-6"></div>
+          <div className="w-full border-t border-amber-200/30 my-6"></div>
           
           {/* 장소 정보 및 네이버 지도 링크 추가 */}
           <div className="mb-4">
-            <div className="text-xl font-korean-title text-amber-800 mb-1">Wedding Venue</div>
+            <div className="text-xl font-korean-title text-amber-100 mb-1">Wedding Venue</div>
             <a 
               href="https://naver.me/F9N45Mo5" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center text-xl text-amber-700 font-korean font-semibold mb-1 hover:text-amber-500 transition-colors"
+              className="inline-flex items-center text-xl text-amber-50 font-korean font-semibold mb-1 hover:text-amber-200 transition-colors"
             >
               {weddingInfo.venue} {weddingInfo.floor}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
             </a>
-            <div className="text-xs text-gray-600 font-korean">
+            <div className="text-xs text-gray-200 font-korean">
               {weddingInfo.address}
             </div>
           </div>
           
-          <div className="text-center">
+          <div className="text-center text-gray-100">
             <div className="text-xl mb-2">{weddingInfo.date}</div>
-            <div className="text-lg text-gray-700">{weddingInfo.time}</div>
+            <div className="text-lg">{weddingInfo.time}</div>
           </div>
           {/* <h2 className="text-2xl font-magic text-hogwarts-gold mb-4">D-{daysRemaining}</h2> */}
         </div>
         
         {/* 달력 및 카운트다운 타이머 추가 */}
-        <div className="card mb-8">
+        <div className="shadow-xl rounded-xl p-6 md:p-8 mb-8" style={{ textShadow: textShadowLight }}>
           <div className="mb-6">
             <CalendarDisplay 
               date={eventDate} 
@@ -115,8 +119,8 @@ const MainPage: React.FC = () => {
         </div>
         
         {/* 오시는 길 */}
-        <div className="card mb-8">
-          <h2 className="text-xl font-bold mb-4">오시는 길</h2>
+        <div className="shadow-xl rounded-xl p-6 md:p-8 mb-8" style={{ textShadow: textShadowLight }}>
+          <h2 className="text-xl font-bold mb-4 text-amber-100">오시는 길</h2>
           
           {/* 지도 영역: 구글 지도 iframe 임베드 */}
           <div className="h-64 rounded-lg mb-4 overflow-hidden shadow-md">
@@ -132,16 +136,17 @@ const MainPage: React.FC = () => {
             ></iframe>
           </div>
           
-          <div className="mb-3">
+          <div className="mb-3 text-gray-100">
             <h3 className="font-bold mb-1">{weddingInfo.venue} {weddingInfo.floor}</h3>
-            <p className="text-gray-700 mb-2">{weddingInfo.address}</p>
-            <p className="text-gray-700 mb-2">{weddingInfo.date} {weddingInfo.time}</p>
+            <p className="mb-2">{weddingInfo.address}</p>
+            <p className="mb-2">{weddingInfo.date} {weddingInfo.time}</p>
             <div className="flex space-x-2 mb-4">
               <a 
                 href="https://naver.me/F9N45Mo5" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-3 py-1 bg-green-600 text-white text-sm rounded"
+                className="px-3 py-1 bg-green-600 text-white text-sm rounded hover:bg-green-700"
+                style={{ textShadow: textShadowDark }}
               >
                 네이버 지도
               </a>
@@ -149,22 +154,21 @@ const MainPage: React.FC = () => {
                 href="https://place.map.kakao.com/2098354524" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="px-3 py-1 bg-yellow-500 text-black text-sm rounded"
+                className="px-3 py-1 bg-yellow-500 text-black text-sm rounded hover:bg-yellow-600"
+                style={{ textShadow: 'none' }}
               >
                 카카오 지도
               </a>
             </div>
           </div>
           
-          <div>
+          <div className="text-gray-100">
             <h3 className="font-bold mb-2">교통 안내</h3>
-            <p className="text-gray-700 mb-3">
-              <span className="font-semibold">교통수단 이용</span>: 신림역 2호선 5번출구 하차후 셔틀버스 또는 버스 운행
-            </p>
+            <p className="mb-3"><span className="font-semibold">교통수단 이용</span>: 신림역 2호선 5번출구 하차후 셔틀버스 또는 버스 운행</p>
             
             {/* 셔틀버스 이미지 추가 */}
             <div className="mb-4 flex justify-center">
-              <div className="w-2/2 overflow-hidden rounded-lg shadow-md">
+              <div className="w-full overflow-hidden rounded-lg shadow-md">
                 {!imageError ? (
                   <img 
                     src={shuttleBusImage} 
@@ -174,9 +178,9 @@ const MainPage: React.FC = () => {
                     onError={() => setImageError(true)}
                   />
                 ) : (
-                  <div className="bg-gray-100 p-4 text-center">
-                    <p className="text-gray-500">셔틀버스 이미지를 불러올 수 없습니다.</p>
-                    <p className="text-gray-700 mt-2">신림역 5번 출구에서 10분 간격으로 셔틀버스가 운행됩니다.</p>
+                  <div className="bg-gray-100/50 p-4 text-center">
+                    <p className="text-gray-300">셔틀버스 이미지를 불러올 수 없습니다.</p>
+                    <p className="text-gray-100 mt-2">신림역 5번 출구에서 10분 간격으로 셔틀버스가 운행됩니다.</p>
                   </div>
                 )}
               </div>
@@ -192,17 +196,18 @@ const MainPage: React.FC = () => {
         transition={{ duration: 0.7, delay: 0.3 }}
       >
         {/* 토글식 연락처 섹션 - 카드 스타일 유지 */}
-        <div className="card mb-8">
+        <div className="shadow-xl rounded-xl p-6 md:p-8 mb-8" style={{ textShadow: textShadowLight }}>
           <ToggleSection 
             title="혼주에게 연락하기" 
-            customBgColor="bg-white"
+            customBgColor="bg-transparent"
+            titleClassName="text-amber-100"
             initiallyOpen={false}
             noPadding={true}
           >
             <div className="space-y-4 mt-4">
               {/* 신랑측 혼주 */}
-              <div className="p-3 bg-amber-50/80 rounded-lg">
-                <h3 className="text-sm font-semibold text-amber-800 mb-3">신랑측 혼주</h3>
+              <div className="p-3 bg-amber-50/20 rounded-lg">
+                <h3 className="text-sm font-semibold text-amber-100 mb-3">신랑측 혼주</h3>
                 <div className="grid grid-cols-3 gap-4 md:gap-6">
                   <button 
                     className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
@@ -244,8 +249,8 @@ const MainPage: React.FC = () => {
               </div>
               
               {/* 신부측 혼주 */}
-              <div className="p-3 bg-amber-50/80 rounded-lg">
-                <h3 className="text-sm font-semibold text-amber-800 mb-3">신부측 혼주</h3>
+              <div className="p-3 bg-amber-50/20 rounded-lg">
+                <h3 className="text-sm font-semibold text-amber-100 mb-3">신부측 혼주</h3>
                 <div className="grid grid-cols-3 gap-4 md:gap-6">
                   <button 
                     className="bg-hogwarts-gold/10 p-4 rounded-xl flex flex-col items-center justify-center min-h-[80px] shadow-sm hover:bg-amber-100 transition-all"
@@ -297,16 +302,17 @@ const MainPage: React.FC = () => {
         transition={{ duration: 0.7, delay: 0.6 }}
       >
         {/* 계좌번호 토글 섹션 - 카드 스타일 유지 */}
-        <div className="card mb-8">
+        <div className="shadow-xl rounded-xl p-6 md:p-8 mb-8" style={{ textShadow: textShadowLight }}>
           <ToggleSection 
             title="마음 전하실 곳" 
-            customBgColor="bg-white"
+            customBgColor="bg-transparent"
+            titleClassName="text-amber-100"
             initiallyOpen={false}
             noPadding={true}
           >
             <div className="space-y-3 mt-4">
-              <div className="p-3 bg-amber-50/80 rounded-lg">
-                <h3 className="text-sm font-semibold text-amber-800 mb-2">신랑측 계좌번호</h3>
+              <div className="p-3 bg-amber-50/20 rounded-lg">
+                <h3 className="text-sm font-semibold text-amber-100 mb-2">신랑측 계좌번호</h3>
                 <div className="space-y-3">
                   <button 
                     className="w-full bg-white p-3 rounded-lg border border-gray-200 flex justify-between items-center"
@@ -338,8 +344,8 @@ const MainPage: React.FC = () => {
                 </div>
               </div>
               
-              <div className="p-3 bg-amber-50/80 rounded-lg">
-                <h3 className="text-sm font-semibold text-amber-800 mb-2">신부측 계좌번호</h3>
+              <div className="p-3 bg-amber-50/20 rounded-lg">
+                <h3 className="text-sm font-semibold text-amber-100 mb-2">신부측 계좌번호</h3>
                 <div className="space-y-3">
                   <button 
                     className="w-full bg-white p-3 rounded-lg border border-gray-200 flex justify-between items-center"
@@ -375,20 +381,20 @@ const MainPage: React.FC = () => {
         </div>
         
         {/* 참석의사 전달하기 버튼 - 맨 아래 유지 */}
-        <div className="card mb-4">
+        <div className="shadow-xl rounded-xl p-6 md:p-8 mb-4">
           <button 
             onClick={() => setShowRsvpModal(true)}
-            className="w-full py-4 px-6 bg-amber-50 rounded-lg text-center hover:bg-amber-100 transition-colors flex justify-between items-center"
+            className="w-full py-4 px-6 bg-amber-100/60 rounded-lg text-center hover:bg-amber-200/70 transition-colors flex justify-between items-center"
           >
-            <span className="text-xl font-korean-title text-amber-800">참석 의사 전달하기</span>
-            <span className="text-amber-700">▼</span>
+            <span className="text-xl font-korean-title text-amber-800" style={{ textShadow: textShadowDark }}>참석 의사 전달하기</span>
           </button>
         </div>
         {/* 사진 구경하러가기 버튼 */}
-        <div className="card">
+        <div className="shadow-xl rounded-xl p-6 md:p-8">
           <Link 
             to="/gallery"
-            className="w-full block py-4 px-6 bg-amber-200 rounded-lg text-center text-xl font-korean-title text-amber-900 hover:bg-amber-300 transition-colors"
+            className="w-full block py-4 px-6 bg-amber-300/70 rounded-lg text-center text-xl font-korean-title text-amber-900 hover:bg-amber-400/80 transition-colors"
+            style={{ textShadow: textShadowDark }}
           >
             📸 사진 구경하러가기
           </Link>

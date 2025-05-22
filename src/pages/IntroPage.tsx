@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useWedding } from '../contexts/WeddingContext';
 import PageLayout from '../components/layout/PageLayout';
-import backgroundImage from '../assets/images/background_intro_wedding.png';
+import backgroundImage from '../assets/images/background_intro_wedding.jpg';
 
 // 네이버 지도 링크
 const NAVER_MAP_URL = "https://naver.me/F9N45Mo5";
@@ -68,76 +68,76 @@ const MagicCountdownTimer: React.FC<{ eventDate: Date }> = ({ eventDate }) => {
 };
 
 // 최적화된 러블리 파티클 컴포넌트
-const LovelyParticles: React.FC = () => {
-  const [particles, setParticles] = useState<ReactNode[]>([]);
+// const LovelyParticles: React.FC = () => { // LovelyParticles 주석 처리
+//   const [particles, setParticles] = useState<ReactNode[]>([]);
   
-  // 파티클 생성 함수를 useCallback으로 메모이제이션
-  const createParticles = useCallback(() => {
-    const newParticles: ReactNode[] = [];
-    const particleCount = 10; // 파티클 수 감소 (25 -> 10)
+//   // 파티클 생성 함수를 useCallback으로 메모이제이션
+//   const createParticles = useCallback(() => {
+//     const newParticles: ReactNode[] = [];
+//     const particleCount = 10; // 파티클 수 감소 (25 -> 10)
     
-    for (let i = 0; i < particleCount; i++) {
-      // 랜덤 크기, 위치, 애니메이션 시간
-      const size = Math.random() * 4 + 2;
-      const xPos = Math.random() * 100;
-      const yPos = Math.random() * 100;
-      const delay = Math.random() * 5;
-      const duration = Math.random() * 12 + 8;
+//     for (let i = 0; i < particleCount; i++) {
+//       // 랜덤 크기, 위치, 애니메이션 시간
+//       const size = Math.random() * 4 + 2;
+//       const xPos = Math.random() * 100;
+//       const yPos = Math.random() * 100;
+//       const delay = Math.random() * 5;
+//       const duration = Math.random() * 12 + 8;
       
-      // 파티클 종류 랜덤 선택 (하트, 별, 원)
-      const types = ['heart', 'star', 'circle'];
-      const type = types[Math.floor(Math.random() * types.length)];
+//       // 파티클 종류 랜덤 선택 (하트, 별, 원)
+//       const types = ['heart', 'star', 'circle'];
+//       const type = types[Math.floor(Math.random() * types.length)];
       
-      // 파티클 색상 랜덤 선택 (따뜻한 색상 팔레트)
-      const colors = [
-        'rgba(255, 223, 186, 0.4)', // 불투명도 감소
-        'rgba(255, 202, 212, 0.4)',
-        'rgba(255, 236, 209, 0.4)',
-        'rgba(245, 215, 181, 0.4)',
-        'rgba(254, 200, 154, 0.4)'
-      ];
-      const color = colors[Math.floor(Math.random() * colors.length)];
+//       // 파티클 색상 랜덤 선택 (따뜻한 색상 팔레트)
+//       const colors = [
+//         'rgba(255, 223, 186, 0.4)', // 불투명도 감소
+//         'rgba(255, 202, 212, 0.4)',
+//         'rgba(255, 236, 209, 0.4)',
+//         'rgba(245, 215, 181, 0.4)',
+//         'rgba(254, 200, 154, 0.4)'
+//       ];
+//       const color = colors[Math.floor(Math.random() * colors.length)];
       
-      // 파티클 요소 생성
-      newParticles.push(
-        <div
-          key={`lovely-particle-${i}-${Date.now()}`}
-          className={`lovely-particle lovely-particle-${type} absolute will-change-transform`}
-          style={{
-            width: `${size}px`,
-            height: `${size}px`,
-            left: `${xPos}%`,
-            top: `${yPos}%`,
-            backgroundColor: color,
-            animationDelay: `${delay}s`,
-            animationDuration: `${duration}s`,
-            opacity: 0
-          }}
-        />
-      );
-    }
+//       // 파티클 요소 생성
+//       newParticles.push(
+//         <div
+//           key={`lovely-particle-${i}-${Date.now()}`}
+//           className={`lovely-particle lovely-particle-${type} absolute will-change-transform`}
+//           style={{
+//             width: `${size}px`,
+//             height: `${size}px`,
+//             left: `${xPos}%`,
+//             top: `${yPos}%`,
+//             backgroundColor: color,
+//             animationDelay: `${delay}s`,
+//             animationDuration: `${duration}s`,
+//             opacity: 0
+//           }}
+//         />
+//       );
+//     }
     
-    // 이전 파티클 교체 방식으로 변경 (추가가 아닌 교체)
-    setParticles(newParticles);
-  }, []);
+//     // 이전 파티클 교체 방식으로 변경 (추가가 아닌 교체)
+//     setParticles(newParticles);
+//   }, []);
   
-  useEffect(() => {
-    // 초기 파티클 생성
-    createParticles();
+//   useEffect(() => {
+//     // 초기 파티클 생성
+//     createParticles();
     
-    // 더 긴 간격으로 파티클 갱신
-    const interval = setInterval(createParticles, 10000); // 5초에서 10초로 변경
+//     // 더 긴 간격으로 파티클 갱신
+//     const interval = setInterval(createParticles, 10000); // 5초에서 10초로 변경
     
-    return () => clearInterval(interval);
-  }, [createParticles]);
+//     return () => clearInterval(interval);
+//   }, [createParticles]);
   
-  // 성능 최적화를 위해 fixed 포지션과 낮은 z-index 사용
-  return (
-    <div className="lovely-particles-container fixed inset-0 overflow-hidden pointer-events-none z-5">
-      {particles}
-    </div>
-  );
-};
+//   // 성능 최적화를 위해 fixed 포지션과 낮은 z-index 사용
+//   return (
+//     <div className=\"lovely-particles-container fixed inset-0 overflow-hidden pointer-events-none z-5\">
+//       {particles}
+//     </div>
+//   );
+// };
 
 // 마법 효과 시간 블록 컴포넌트
 const MagicTimeBlock: React.FC<{ 
@@ -251,7 +251,7 @@ const IntroPage: React.FC = () => {
   return (
     <PageLayout showNavigation={false}>
       {/* 러블리 파티클 배경 */}
-      <LovelyParticles />
+      {/* <LovelyParticles /> */}
       
       {/* 스냅 스크롤을 위한 컨테이너 */}
       <div 
@@ -434,14 +434,35 @@ const IntroPage: React.FC = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-12 relative z-10"
+            className="mt-12 relative z-10 flex flex-col sm:flex-row items-center justify-center"
           >
+            <motion.div 
+              className="mr-0 sm:mr-2 mb-2 sm:mb-0 flex items-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.5 }}
+            >
+              <motion.span 
+                className="mr-1 text-sm font-korean text-amber-700"
+                animate={{ opacity: [0.7, 1, 0.7] }}
+                transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              >
+                여기를 클릭하세요
+              </motion.span>
+              <span className="text-2xl text-amber-700" role="img" aria-label="pointing right emoji">👉</span>
+            </motion.div>
             <Link 
               to="/main" 
               className="magic-btn inline-block font-korean bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 shadow-xl px-6 py-3 rounded-full text-white transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-1"
             >
               청첩장 상세보기
-              <span className="ml-2">→</span>
+              <motion.span 
+                className="ml-2" 
+                animate={{ x: [0, 5, 0] }} 
+                transition={{ repeat: Infinity, duration: 1, ease: "easeInOut" }}
+              >
+                →
+              </motion.span>
             </Link>
           </motion.div>
         </div>
