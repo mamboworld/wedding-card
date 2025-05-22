@@ -52,7 +52,7 @@ const MagicCountdownTimer: React.FC<{ eventDate: Date }> = ({ eventDate }) => {
   if (!mounted) return null;
 
   return (
-    <div className="mt-8 mb-10">
+    <div className="mt-8 mb-6">
       <div className="text-center mb-5">
         <h3 className="text-2xl font-korean-title text-amber-800 mb-1">D-{timeLeft.days}</h3>
         <p className="text-lg font-korean text-amber-700">우리의 새로운 시작까지!</p>
@@ -256,7 +256,7 @@ const IntroPage: React.FC = () => {
       {/* 스냅 스크롤을 위한 컨테이너 */}
       <div 
         className="flex flex-col items-center snap-y snap-mandatory h-screen overflow-y-scroll overscroll-none snap-container hide-scrollbar"
-        style={{ scrollSnapType: 'y mandatory', backgroundColor: 'transparent' }}
+        style={{ scrollSnapType: 'y mandatory', backgroundColor: 'transparent !important' }}
       >
         {/* 첫 번째 섹션: 고정 배경 이미지와 기본 정보 */}
         <div 
@@ -411,7 +411,7 @@ const IntroPage: React.FC = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="mt-8 relative z-10 w-full flex flex-col items-center justify-center"
+            className="mt-6 relative z-10 w-full flex flex-col items-center justify-center"
           >
             <Link 
               to="/main" 
