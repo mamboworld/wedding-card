@@ -73,7 +73,7 @@ const RsvpModal: React.FC<RsvpModalProps> = ({ isOpen, onClose }) => {
           onClick={onClose}
         >
           <motion.div
-            className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 overflow-hidden"
+            className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4 flex flex-col max-h-[85vh]"
             initial={{ scale: 0.9, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.9, y: 20 }}
@@ -93,7 +93,7 @@ const RsvpModal: React.FC<RsvpModalProps> = ({ isOpen, onClose }) => {
                   <h2 className="text-xl font-korean-title text-amber-800 text-center">참석 의사 전달하기</h2>
                 </div>
 
-                <form onSubmit={handleSubmit} className="p-6 space-y-4">
+                <div className="p-6 space-y-4 overflow-y-auto flex-grow">
                   {/* 구분 버튼 */}
                   <div>
                     <div className="text-lg font-korean-title text-gray-700 mb-2">구분</div>
@@ -183,8 +183,10 @@ const RsvpModal: React.FC<RsvpModalProps> = ({ isOpen, onClose }) => {
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
                     />
                   </div>
-
-                  <div className="flex justify-end space-x-3 pt-2">
+                </div>
+                
+                <form onSubmit={handleSubmit} className="p-6 border-t border-gray-200">
+                  <div className="flex justify-end space-x-3">
                     <button
                       type="button"
                       onClick={onClose}
