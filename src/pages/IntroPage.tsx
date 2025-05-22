@@ -262,7 +262,8 @@ const IntroPage: React.FC = () => {
         <div 
           className="min-h-screen w-full flex flex-col justify-center items-center relative pt-4 snap-start snap-always snap-section"
         >
-          {/* 이미지 위에 반투명 오버레이 추가 */}
+          {/* 첫 번째 섹션 불투명 오버레이 추가 */}
+          <div className="absolute inset-0 bg-white/30 backdrop-blur-xs z-0"></div>
           
           <motion.div 
             className="text-center relative z-10 px-6 md:px-12 max-w-sm mx-auto"
