@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wedding-card/static/css/main.43e44cc6.css",
-    "main.js": "/wedding-card/static/js/main.a43813ef.js",
+    "main.js": "/wedding-card/static/js/main.e71efcf9.js",
     "static/js/453.94a8515f.chunk.js": "/wedding-card/static/js/453.94a8515f.chunk.js",
     "static/media/background_intro_wedding.jpg": "/wedding-card/static/media/background_intro_wedding.e5da9e73a20dfc529136.jpg",
     "static/media/image2.jpg": "/wedding-card/static/media/image2.dd9458d87f487fae94ac.jpg",
@@ -10,11 +10,11 @@
     "static/media/shuttle_bus.jpg": "/wedding-card/static/media/shuttle_bus.9588e36a3dba306c93ad.jpg",
     "index.html": "/wedding-card/index.html",
     "main.43e44cc6.css.map": "/wedding-card/static/css/main.43e44cc6.css.map",
-    "main.a43813ef.js.map": "/wedding-card/static/js/main.a43813ef.js.map",
+    "main.e71efcf9.js.map": "/wedding-card/static/js/main.e71efcf9.js.map",
     "453.94a8515f.chunk.js.map": "/wedding-card/static/js/453.94a8515f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43e44cc6.css",
-    "static/js/main.a43813ef.js"
+    "static/js/main.e71efcf9.js"
   ]
 }
