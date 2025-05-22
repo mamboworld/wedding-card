@@ -42,7 +42,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
         background: `url(${backgroundImage}) no-repeat center center`,
         backgroundSize: 'contain',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed' 
+        backgroundAttachment: 'scroll'
       } : {}}
     >
       {backgroundImage && (
