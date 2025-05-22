@@ -38,15 +38,32 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   return (
     <div 
       className="min-h-screen flex flex-col" 
-      style={backgroundImage ? { 
-        background: `url(${backgroundImage}) no-repeat center center`,
-        backgroundSize: 'contain',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'scroll'
-      } : {}}
     >
       {backgroundImage && (
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/30 backdrop-blur-sm z-[-1]"></div>
+        <>
+          {/* Background Image Layer - Fixed to viewport */}
+          <div
+            style={{
+              position: 'fixed',
+              inset: 0,
+              backgroundImage: `url(${backgroundImage})`,
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center center',
+              backgroundSize: 'contain',
+              zIndex: -2, 
+            }}
+          />
+          {/* Overlay Layer (gradient + blur) - Fixed to viewport */}
+          <div
+            style={{
+              position: 'fixed',
+              inset: 0,
+              backgroundImage: 'linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.3))', // Tailwind: from-black/10 to-black/30
+              backdropFilter: 'blur(4px)', // Tailwind: backdrop-blur-sm
+              zIndex: -1, 
+            }}
+          />
+        </>
       )}
       <motion.main
         className="flex-1 max-w-sm mx-auto w-full px-4 py-6 pb-24 md:max-w-2xl relative z-10"
