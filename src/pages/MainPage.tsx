@@ -175,7 +175,7 @@ const MainPage: React.FC = () => {
         </div>
       </motion.div>
       
-      <motion.div className="mb-10" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}>
+      <motion.div className="mb-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}>
         <div className={`${cardBaseStyle}`} >
           <ToggleSection title="혼주에게 연락하기" customBgColor="bg-transparent" titleClassName="text-2xl font-korean-display text-amber-800" initiallyOpen={false} noPadding={true} >
             <div className="space-y-4 mt-4" style={{ textShadow: textShadowForWhiteBg }}>
@@ -267,7 +267,7 @@ const MainPage: React.FC = () => {
         </div>
       </motion.div>
       
-      <motion.div className="mb-10" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}>
+      <motion.div className="mb-6" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}>
         <div className={`${cardBaseStyle}`} >
           <ToggleSection title="마음 전하실 곳" customBgColor="bg-transparent" titleClassName="text-2xl font-korean-display text-amber-800" initiallyOpen={false} noPadding={true}>
             <div className="space-y-3 mt-4" style={{ textShadow: textShadowForWhiteBg }}>
@@ -340,13 +340,19 @@ const MainPage: React.FC = () => {
           </ToggleSection>
         </div>
         
-        <div className={`${cardBaseStyle} mb-4`}>
-          <button onClick={() => setShowRsvpModal(true)} className="w-full py-4 px-6 bg-amber-100/80 rounded-lg text-center hover:bg-amber-200/90 transition-colors flex justify-between items-center">
+        <div className={`${cardBaseStyle} mb-3 mt-6`}>
+          <button 
+            onClick={() => setShowRsvpModal(true)} 
+            className="w-full py-4 px-6 bg-gradient-to-r from-amber-400 to-amber-500 text-white rounded-lg text-center shadow-lg hover:from-amber-500 hover:to-amber-600 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-300 focus:ring-opacity-50 flex justify-center items-center group"
+          >
             <span className="text-xl font-korean-title text-amber-800" style={{ textShadow: 'none' }}>참석 의사 전달하기</span>
           </button>
         </div>
-        <div className={`${cardBaseStyle}`}>
-          <Link to="/gallery" className="w-full block py-4 px-6 bg-amber-300/80 rounded-lg text-center text-xl font-korean-title text-amber-900 hover:bg-amber-400/90 transition-colors" style={{ textShadow: 'none' }}>
+        <div className={`${cardBaseStyle} mt-3`}>
+          <Link 
+            to="/gallery" 
+            className="w-full block py-4 px-6 bg-gradient-to-r from-amber-300 to-amber-400 text-white rounded-lg text-center shadow-lg hover:from-amber-400 hover:to-amber-500 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-200 focus:ring-opacity-50 flex justify-center items-center group"
+          >
             📸 사진 구경하러가기
           </Link>
         </div>
