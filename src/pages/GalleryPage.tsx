@@ -8,6 +8,7 @@ import preview1 from '../assets/images/preview_wedding_01.jpeg';
 import preview2 from '../assets/images/preview_wedding_02.jpeg';
 import preview3 from '../assets/images/preview_wedding_03.jpeg';
 import preview4 from '../assets/images/preview_wedding_04.jpeg';
+import preview5 from '../assets/images/preview_wedding_05.jpeg';
 
 const images = [
   {
@@ -29,6 +30,11 @@ const images = [
     original: preview4,
     thumbnail: preview4,
     description: '우리의 웨딩 프리뷰 4',
+  },
+  {
+    original: preview5,
+    thumbnail: preview5,
+    description: '우리의 웨딩 프리뷰 5',
   },
 ];
 
