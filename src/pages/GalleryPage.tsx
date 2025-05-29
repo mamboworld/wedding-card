@@ -4,25 +4,31 @@ import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import PageLayout from '../components/layout/PageLayout';
 // import ComingSoonBanner from '../components/ComingSoonBanner';
-import image1 from '../assets/images/image1.jpg';
-import image2 from '../assets/images/image2.jpg';
-import image3 from '../assets/images/image3.jpg';
+import preview1 from '../assets/images/preview_wedding_01.jpeg';
+import preview2 from '../assets/images/preview_wedding_02.jpeg';
+import preview3 from '../assets/images/preview_wedding_03.jpeg';
+import preview4 from '../assets/images/preview_wedding_04.jpeg';
 
 const images = [
   {
-    original: image1,
-    thumbnail: image1,
-    description: '우리의 추억 1',
+    original: preview1,
+    thumbnail: preview1,
+    description: '우리의 웨딩 프리뷰 1',
   },
   {
-    original: image2,
-    thumbnail: image2,
-    description: '우리의 추억 2',
+    original: preview2,
+    thumbnail: preview2,
+    description: '우리의 웨딩 프리뷰 2',
   },
   {
-    original: image3,
-    thumbnail: image3,
-    description: '우리의 추억 3',
+    original: preview3,
+    thumbnail: preview3,
+    description: '우리의 웨딩 프리뷰 3',
+  },
+  {
+    original: preview4,
+    thumbnail: preview4,
+    description: '우리의 웨딩 프리뷰 4',
   },
 ];
 
