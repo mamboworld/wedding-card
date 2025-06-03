@@ -4,37 +4,97 @@ import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import PageLayout from '../components/layout/PageLayout';
 // import ComingSoonBanner from '../components/ComingSoonBanner';
-import preview1 from '../assets/images/preview_wedding_01.jpeg';
-import preview2 from '../assets/images/preview_wedding_02.jpeg';
-import preview3 from '../assets/images/preview_wedding_03.jpeg';
-import preview4 from '../assets/images/preview_wedding_04.jpeg';
-import preview5 from '../assets/images/preview_wedding_05.jpeg';
+import bong15 from '../assets/images/BONG_001.jpeg';
+import bong14 from '../assets/images/BONG_002.jpeg';
+import bong13 from '../assets/images/BONG_003.jpeg';
+import bong12 from '../assets/images/BONG_004.jpeg';
+import bong11 from '../assets/images/BONG_005.jpeg';
+import bong10 from '../assets/images/BONG_006.jpeg';
+import bong9 from '../assets/images/BONG_007.jpeg';
+import bong8 from '../assets/images/BONG_008.jpeg';
+import bong7 from '../assets/images/BONG_009.jpeg';
+import bong6 from '../assets/images/BONG_010.jpeg';
+import bong5 from '../assets/images/BONG_011.jpeg';
+import bong4 from '../assets/images/BONG_012.jpeg';
+import bong3 from '../assets/images/BONG_013.jpeg';
+import bong2 from '../assets/images/BONG_014.jpeg';
+import bong1 from '../assets/images/BONG_015.jpeg';
 
 const images = [
   {
-    original: preview1,
-    thumbnail: preview1,
-    description: '우리의 웨딩 프리뷰 1',
+    original: bong1,
+    thumbnail: bong1,
+    description: '우리의 웨딩 1',
   },
   {
-    original: preview2,
-    thumbnail: preview2,
-    description: '우리의 웨딩 프리뷰 2',
+    original: bong2,
+    thumbnail: bong2,
+    description: '우리의 웨딩 2',
   },
   {
-    original: preview3,
-    thumbnail: preview3,
-    description: '우리의 웨딩 프리뷰 3',
+    original: bong3,
+    thumbnail: bong3,
+    description: '우리의 웨딩 3',
   },
   {
-    original: preview4,
-    thumbnail: preview4,
-    description: '우리의 웨딩 프리뷰 4',
+    original: bong4,
+    thumbnail: bong4,
+    description: '우리의 웨딩 4',
   },
   {
-    original: preview5,
-    thumbnail: preview5,
-    description: '우리의 웨딩 프리뷰 5',
+    original: bong5,
+    thumbnail: bong5,
+    description: '우리의 웨딩 5',
+  },
+  {
+    original: bong6,
+    thumbnail: bong6,
+    description: '우리의 웨딩 6',
+  },
+  {
+    original: bong7,
+    thumbnail: bong7,
+    description: '우리의 웨딩 7',
+  },
+  {
+    original: bong8,
+    thumbnail: bong8,
+    description: '우리의 웨딩 8',
+  },
+  {
+    original: bong9,
+    thumbnail: bong9,
+    description: '우리의 웨딩 9',
+  },
+  {
+    original: bong10,
+    thumbnail: bong10,
+    description: '우리의 웨딩 10',
+  },
+  {
+    original: bong11,
+    thumbnail: bong11,
+    description: '우리의 웨딩 11',
+  },
+  {
+    original: bong12,
+    thumbnail: bong12,
+    description: '우리의 웨딩 12',
+  },
+  {
+    original: bong13,
+    thumbnail: bong13,
+    description: '우리의 웨딩 13',
+  },
+  {
+    original: bong14,
+    thumbnail: bong14,
+    description: '우리의 웨딩 14',
+  },
+  {
+    original: bong15,
+    thumbnail: bong15,
+    description: '우리의 웨딩 15',
   },
 ];
 
@@ -54,14 +114,14 @@ const GalleryPage: React.FC = () => {
   return (
     <PageLayout>
       {/* 6월 3일 업로드 예정 팝업 광고 */}
-      {showNotice && (
+      {/*showNotice && (
         <div className="fixed top-8 left-1/2 z-50 -translate-x-1/2 bg-amber-100 border border-amber-300 shadow-xl rounded-xl px-6 py-4 flex items-center gap-3 animate-fade-in-out">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-amber-600 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
           </svg>
           <span className="text-amber-900 font-bold text-lg">웨딩사진은 6월 3일에 올라올 예정입니다!</span>
         </div>
-      )}
+      )*/}
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
