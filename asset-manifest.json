@@ -1,22 +1,32 @@
 {
   "files": {
     "main.css": "/wedding-card/static/css/main.4b876db2.css",
-    "main.js": "/wedding-card/static/js/main.9a135b9e.js",
+    "main.js": "/wedding-card/static/js/main.84b5977a.js",
     "static/js/453.94a8515f.chunk.js": "/wedding-card/static/js/453.94a8515f.chunk.js",
-    "static/media/preview_wedding_04.jpeg": "/wedding-card/static/media/preview_wedding_04.5f1cb418f3ac33fdfb9a.jpeg",
+    "static/media/BONG_004.jpeg": "/wedding-card/static/media/BONG_004.08758aa7ad8d83a9a665.jpeg",
     "static/media/background_intro_wedding.jpg": "/wedding-card/static/media/background_intro_wedding.5d27185918387b6a3004.jpg",
-    "static/media/preview_wedding_01.jpeg": "/wedding-card/static/media/preview_wedding_01.5d27185918387b6a3004.jpeg",
-    "static/media/preview_wedding_02.jpeg": "/wedding-card/static/media/preview_wedding_02.6495628e9a8aa52bed4a.jpeg",
-    "static/media/preview_wedding_05.jpeg": "/wedding-card/static/media/preview_wedding_05.313d6c196e2d4aeadd5e.jpeg",
-    "static/media/preview_wedding_03.jpeg": "/wedding-card/static/media/preview_wedding_03.900d07c6318fa7de29e4.jpeg",
+    "static/media/BONG_010.jpeg": "/wedding-card/static/media/BONG_010.c852657f9d61e8126b63.jpeg",
+    "static/media/BONG_003.jpeg": "/wedding-card/static/media/BONG_003.f107cba8ecc708bc3d44.jpeg",
+    "static/media/BONG_011.jpeg": "/wedding-card/static/media/BONG_011.97a6713f679d78725c4c.jpeg",
+    "static/media/BONG_009.jpeg": "/wedding-card/static/media/BONG_009.ba030a6e4f89ec895d7b.jpeg",
+    "static/media/BONG_015.jpeg": "/wedding-card/static/media/BONG_015.76afbb69967d67d70c01.jpeg",
+    "static/media/BONG_013.jpeg": "/wedding-card/static/media/BONG_013.e524c57ec44a0e690da9.jpeg",
+    "static/media/BONG_012.jpeg": "/wedding-card/static/media/BONG_012.6c7c93bf5792d094aad9.jpeg",
+    "static/media/BONG_014.jpeg": "/wedding-card/static/media/BONG_014.5e4ae3718bbc76cc310e.jpeg",
+    "static/media/BONG_006.jpeg": "/wedding-card/static/media/BONG_006.dc1cb75a06c43f02e956.jpeg",
+    "static/media/BONG_001.jpeg": "/wedding-card/static/media/BONG_001.2c2cbaa0b1c8f051c387.jpeg",
+    "static/media/BONG_005.jpeg": "/wedding-card/static/media/BONG_005.0b0e18795b9a95d99d94.jpeg",
+    "static/media/BONG_002.jpeg": "/wedding-card/static/media/BONG_002.2eacbba8c9c2d0f12a11.jpeg",
+    "static/media/BONG_008.jpeg": "/wedding-card/static/media/BONG_008.e614a5944a572e341d51.jpeg",
+    "static/media/BONG_007.jpeg": "/wedding-card/static/media/BONG_007.6218168b1bf9bb5b20eb.jpeg",
     "static/media/shuttle_bus.jpg": "/wedding-card/static/media/shuttle_bus.9588e36a3dba306c93ad.jpg",
     "index.html": "/wedding-card/index.html",
     "main.4b876db2.css.map": "/wedding-card/static/css/main.4b876db2.css.map",
-    "main.9a135b9e.js.map": "/wedding-card/static/js/main.9a135b9e.js.map",
+    "main.84b5977a.js.map": "/wedding-card/static/js/main.84b5977a.js.map",
     "453.94a8515f.chunk.js.map": "/wedding-card/static/js/453.94a8515f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4b876db2.css",
-    "static/js/main.9a135b9e.js"
+    "static/js/main.84b5977a.js"
   ]
 }
