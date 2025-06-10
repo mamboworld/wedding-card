@@ -276,11 +276,11 @@ const MainPage: React.FC = () => {
                 <div className="space-y-3">
                   <button 
                     className="w-full bg-white/90 p-3.5 rounded-lg border border-amber-200/70 flex justify-between items-center hover:bg-amber-50/80 transition-colors duration-300 shadow-sm hover:shadow-md"
-                    onClick={() => handleCopyAccount('신랑', '3333-16-464095')}
+                    onClick={() => handleCopyAccount('신랑', '3333-16-4640495')}
                   >
                     <div className="text-left">
                       <div className="text-sm text-gray-500">신랑</div>
-                      <div className="font-medium text-amber-800">카카오뱅크 3333-16-464095</div>
+                      <div className="font-medium text-amber-800">카카오뱅크 3333-16-4640495</div>
                       <div className="text-sm text-amber-700">유예찬</div>
                     </div>
                     <div className="text-sm font-semibold text-amber-600 hover:text-amber-700">
